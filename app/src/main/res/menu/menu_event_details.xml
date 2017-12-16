@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="spit.matrix17.Activities.EventDetails">
+    <item
+        android:id="@+id/action_set_reminder"
+        android:icon="@drawable/svg_alarm_add_white_48px"
+        android:orderInCategory="2"
+        android:title="@string/set_reminder"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/svg_share_white_48px"
+        android:orderInCategory="3"
+        android:title="@string/share_event"
+        app:showAsAction="ifRoom" />
+</menu>

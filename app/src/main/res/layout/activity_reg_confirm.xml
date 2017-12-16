@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sp.udaan.Activites.RegConfirm">
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register for the Event:"
+        android:id="@+id/registerforeventtext"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ABC"
+        android:textSize="32dp"
+        android:textColor="@color/primary_text"
+        android:id="@+id/registerforevent_eventname"
+        android:layout_below="@+id/registerforeventtext"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Confirm"
+        android:id="@+id/regButton"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/card_background"/>
+
+</RelativeLayout>

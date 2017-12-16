@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--<item
+        android:id="@+id/menu_visit_website"
+        android:title=" "
+        app:showAsAction="always" /> -->
+
+    <item
+        android:id="@+id/menu_follow_facebook"
+        android:icon="@drawable/svg_logo_facebook"
+        android:title=""
+        app:showAsAction="always"/>
+    <!--
+    <item
+        android:id="@+id/menu_follow_twitter"
+        android:icon="@drawable/svg_logo_twitter"
+        android:title="@string/follow_twitter" />
+        -->
+    <item
+        android:id="@+id/menu_follow_instagram"
+        android:icon="@drawable/svg_logo_instagram"
+        app:showAsAction="always"
+        android:title=""/>
+
+
+    <item
+        android:id="@+id/menu_follow_snapchat"
+        android:icon="@drawable/svg_logo_snapchat"
+        app:showAsAction="always"
+        android:title=""/>
+
+</menu>

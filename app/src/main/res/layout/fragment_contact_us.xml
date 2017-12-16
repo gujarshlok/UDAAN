@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/About_Card">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/college_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/spit" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/college_address"
+                    android:textSize="17sp"
+                    android:textIsSelectable="true"
+                    android:padding="15dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/visitWebsite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Website"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"/>
+                    <Button
+                        android:id="@+id/findOnMap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Find On Map"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/About_Card">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/contact_name_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:text="Phone"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/contact_num_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="022 2670 7440"/>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/contact_us_save_one"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="8dp"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:src="@drawable/svg_save_white_48px" />
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/contact_us_call_one"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:src="@drawable/svg_phone_white_24px" />
+
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:padding="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:textStyle="bold"
+                            android:id="@+id/contact_name_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Office"/>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/contact_num_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="022 2670 8520"/>
+
+                    </LinearLayout>
+
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/contact_us_save_two"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="8dp"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:src="@drawable/svg_save_white_48px" />
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/contact_us_call_two"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:src="@drawable/svg_phone_white_24px" />
+
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="32dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:text="Email:"/>
+                    <TextView
+                        android:id="@+id/emailId_matrix_TextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textColor="@color/colorAccent"
+                        android:text="principal@spit.ac.in"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
