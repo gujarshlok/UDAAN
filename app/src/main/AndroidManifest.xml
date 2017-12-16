@@ -25,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activites.MainActivity" />
         <activity android:name=".Activites.AddEvent" />
         <activity android:name=".Activites.AddEvent2" />
         <activity android:name=".Activites.EventDetails" />

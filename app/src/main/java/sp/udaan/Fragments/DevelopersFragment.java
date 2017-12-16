@@ -1,7 +1,6 @@
 package sp.udaan.Fragments;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -48,12 +47,12 @@ public class DevelopersFragment extends Fragment {
         branch1=(TextView)view.findViewById(R.id.branch_Aditya);
         branch2=(TextView)view.findViewById(R.id.branch_Tejas);
 
-        Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/marketdeco.ttf");
+//        Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/marketdeco.ttf");
 
-        name1.setTypeface(custom_font);
-        name2.setTypeface(custom_font);
-        branch1.setTypeface(custom_font);
-        branch2.setTypeface(custom_font);
+  //      name1.setTypeface(custom_font);
+    //    name2.setTypeface(custom_font);
+      //  branch1.setTypeface(custom_font);
+        //branch2.setTypeface(custom_font);
 
         g1=(Button)view.findViewById(R.id.google_aditya);
         g2=(Button)view.findViewById(R.id.google_Tejas);
