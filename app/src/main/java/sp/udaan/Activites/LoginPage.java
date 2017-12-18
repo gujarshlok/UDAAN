@@ -97,6 +97,7 @@ public class LoginPage extends AppCompatActivity {
         eventOrg.add("zorbing.matrix17@gmail.com");
         eventOrg.add("spit.csi@gmail.com");
         eventOrg.add("projectexhibition.matrix2k17@gmail.com");
+
         // and so on
         //prjct exhibition, tech quz
 

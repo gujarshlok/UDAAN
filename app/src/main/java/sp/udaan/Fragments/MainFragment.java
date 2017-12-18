@@ -59,10 +59,10 @@ public class MainFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            EventListFragment megaEventPage = EventListFragment.newInstance("Championships");
-            EventListFragment techEventPage =  EventListFragment.newInstance("Talks and Exhibitions");
-            EventListFragment funEventPage =  EventListFragment.newInstance("Featured");
-            EventListFragment teEventPage =  EventListFragment.newInstance("Fun");
+            EventListFragment megaEventPage = EventListFragment.newInstance("Literary Arts");
+            EventListFragment techEventPage =  EventListFragment.newInstance("Performing Arts");
+            EventListFragment funEventPage =  EventListFragment.newInstance("Fun Events");
+            EventListFragment teEventPage =  EventListFragment.newInstance("Featured");
             switch (position) {
                 case 0:
                     return megaEventPage;
@@ -84,10 +84,10 @@ public class MainFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position){
-                case 0:return "Championships";
-                case 1:return "Talks and Exhibitions";
-                case 2:return "Featured";
-                case 3: return "Fun";
+                case 0:return "Literary Arts";
+                case 1:return "Performing Arts";
+                case 2:return "Fun Events";
+                case 3: return "Featured";
             }
             return null;
         }
