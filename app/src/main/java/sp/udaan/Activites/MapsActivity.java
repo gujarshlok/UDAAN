@@ -34,7 +34,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        Toast.makeText(this,"Hle",Toast.LENGTH_SHORT).show();
     }
 
 
@@ -93,12 +92,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             tracker=0;
             if (marker.equals(marker1)) {
                 prev_marker=marker1;
-                i.putExtra("FloorNo","1");
+                i.putExtra("EventCategory","Fun Events");
             }   else if (marker.equals(marker2)) {
                 prev_marker=marker2;
-                i.putExtra("FloorNo","2");
+                i.putExtra("EventCategory","Performing Arts");
             }   else if (marker.equals(marker3)) {
-                i.putExtra("FloorNo","3");
+                i.putExtra("EventCategory","Literary Arts");
             }
             startActivity(i);
         }

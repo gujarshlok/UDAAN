@@ -100,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
     TextView navDrawerUsername, navDrawerUseremailid;
     private static final String TAG = "MainActivity";
 
+    String currentCategory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +116,15 @@ public class MainActivity extends AppCompatActivity {
                 Object value = getIntent().getExtras().get(key);
                 Log.d(TAG, "Key: " + key + " Value: " + value);
             }
+        }
+
+        //Getting Event Category here
+        try
+        {
+            currentCategory=getIntent().getStringExtra("EventCategory");
+        }catch (Exception e)
+        {
+            currentCategory="Literary Arts";
         }
 
         admin = new ArrayList();
@@ -176,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(mapsActivity);
                         valid=1;
                     }
-                    
+
                     Email = user.getEmail();
 
 
