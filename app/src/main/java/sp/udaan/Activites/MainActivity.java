@@ -53,6 +53,7 @@ import sp.udaan.Fragments.MyEventsFragment;
 import sp.udaan.Fragments.SponsorsFragment;
 import sp.udaan.HelperClasses.CustomPagerAdapter;
 import sp.udaan.HelperClasses.CustomViewPager;
+import sp.udaan.R;
 
 import static com.firebase.ui.auth.ui.AcquireEmailHelper.RC_SIGN_IN;
 
@@ -78,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     FirebaseUser user;
 
-    SharedPreferences.Editor sp, spa;
+    SharedPreferences.Editor sp, spa, shouldMapeditor;
     SharedPreferences userInfo;
+    SharedPreferences shouldMap;
     SharedPreferences firstTime;
 
     static String type;
@@ -137,7 +139,12 @@ public class MainActivity extends AppCompatActivity {
         navDrawerUsername = (TextView) headerview.findViewById(R.id.NavigationDrawer_Username);
         navDrawerUseremailid = (TextView) headerview.findViewById(R.id.NavigationDrawer_UserEmail);
 
-        //SharedPreferences.Editor editor=sp
+        shouldMap=getSharedPreferences("Mapsharedprefs",Context.MODE_APPEND);
+        shouldMapeditor=shouldMap.edit();
+        //shouldMapeditor.putString("LoginDone","0");
+        //shouldMapeditor.commit();
+
+        /// /SharedPreferences.Editor editor=sp
         //user=mFirebaseAuth.getCurrentUser();
         //SharedPreferences sharedPreferences=getSharedPreferences("userInfo",Context.MODE_PRIVATE);
 
@@ -163,11 +170,13 @@ public class MainActivity extends AppCompatActivity {
 
                     sp.commit();
 
-                    if (valid == 0) {
+
+                    if (shouldMap.getString("LoginDone","0").equals("1") && valid==0 ){
                         Intent mapsActivity = new Intent(MainActivity.this, MapsActivity.class);
                         startActivity(mapsActivity);
-                        valid = 1;
+                        valid=1;
                     }
+                    
                     Email = user.getEmail();
 
 

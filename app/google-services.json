@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "99056335123-0preqtd1p3pee9qhjqtk6njd9pjb7v8n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sp.udaan",
+            "certificate_hash": "9df023707dd7f49521f3eef6bf48a944d84e3c63"
+          }
+        },
+        {
           "client_id": "99056335123-h1jmmpni08reek4foelihmqaadiovd9j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

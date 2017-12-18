@@ -39,9 +39,10 @@ public class LoginPage extends AppCompatActivity {
     int i = 1;
     String name,email,profile,uid,type,phoneNo;
 
-    SharedPreferences.Editor sp,spa;
+    SharedPreferences.Editor sp,spa,shouldMapEditor;
     SharedPreferences userInfo;
     SharedPreferences firstTime;
+    SharedPreferences shouldMap;
 
     TextView uname,uemail,utype;
     EditText uclass,ucontact;
@@ -101,6 +102,9 @@ public class LoginPage extends AppCompatActivity {
 
         userInfo = getSharedPreferences("userInfo", Context.MODE_APPEND);
         sp = userInfo.edit();
+
+        shouldMap = getSharedPreferences("Mapsharedprefs",Context.MODE_APPEND);
+        shouldMapEditor = shouldMap.edit();
 
         firstTime = getSharedPreferences("firstTime", Context.MODE_APPEND);
         spa = firstTime.edit();
@@ -197,6 +201,8 @@ public class LoginPage extends AppCompatActivity {
                         sp.putString("from",y);
                         sp.commit();
                         spa.putBoolean("firstSignIn",false);
+                        shouldMapEditor.putString("LoginDone","1");
+                        shouldMapEditor.commit();
                         finish();
                     }
                 }
@@ -235,6 +241,8 @@ public class LoginPage extends AppCompatActivity {
         sp.putString("from", fixedFrom);
         sp.putString("phone",phoneNo);
         sp.commit();
+        shouldMapEditor.putString("LoginDone","1");
+        shouldMapEditor.commit();
         finish();
     }
 
