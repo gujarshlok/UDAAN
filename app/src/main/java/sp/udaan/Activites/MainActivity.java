@@ -441,7 +441,6 @@ public class MainActivity extends AppCompatActivity {
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     i = 1;
-                                                    valid = 0;
                                                     navigationView.getMenu().getItem(0).setChecked(true);
                                                 }
                                             });
