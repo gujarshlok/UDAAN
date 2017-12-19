@@ -18,6 +18,7 @@ public class MainFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager viewPager;
+    String eventCategory="Literary Arts";
 
     public MainFragment(){}
 
@@ -29,6 +30,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
@@ -59,35 +61,47 @@ public class MainFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            EventListFragment megaEventPage = EventListFragment.newInstance("Literary Arts");
-            EventListFragment techEventPage =  EventListFragment.newInstance("Performing Arts");
-            EventListFragment funEventPage =  EventListFragment.newInstance("Fun Events");
-            EventListFragment teEventPage =  EventListFragment.newInstance("Featured");
+            try
+            {
+                eventCategory=getActivity().getIntent().getStringExtra("EventCategory");
+                if (eventCategory==null)
+                {
+                    eventCategory="Literary Arts";
+                }
+            }catch (Exception e)
+            {
+                eventCategory="Literary Arts";
+            }
+
+            EventListFragment megaEventPage = EventListFragment.newInstance(eventCategory);
+
             switch (position) {
                 case 0:
                     return megaEventPage;
-                case 1:
-                    return techEventPage;
-                case 2:
-                    return funEventPage;
-                case 3:
-                    return teEventPage;
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            return 4;
+            return 1;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
+            try
+            {
+                eventCategory=getActivity().getIntent().getStringExtra("EventCategory");
+                if (eventCategory==null)
+                {
+                    eventCategory="Literary Arts";
+                }
+            }catch (Exception e)
+            {
+                eventCategory="Literary Arts";
+            }
             switch (position){
-                case 0:return "Literary Arts";
-                case 1:return "Performing Arts";
-                case 2:return "Fun Events";
-                case 3: return "Featured";
+                case 0:return eventCategory;
             }
             return null;
         }
