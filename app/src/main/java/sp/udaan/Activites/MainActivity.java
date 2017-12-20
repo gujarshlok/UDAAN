@@ -42,6 +42,7 @@ import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
 import sp.udaan.Fragments.AboutAppFragment;
+import sp.udaan.Fragments.ChatFragment;
 import sp.udaan.Fragments.CommitteeFragment;
 import sp.udaan.Fragments.ContactUsFragment;
 import sp.udaan.Fragments.DevelopersFragment;
@@ -332,6 +333,20 @@ public class MainActivity extends AppCompatActivity {
                                 case R.id.view_events:
                                     Intent j = new Intent(MainActivity.this,MapsActivity.class);
                                     startActivity(j);
+                                    break;
+
+                                case R.id.chat:
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            getSupportFragmentManager().popBackStackImmediate();
+                                            fragmentTransaction.replace(R.id.fragment_container, new ChatFragment());
+                                            appBarLayout.setExpanded(false, true);
+                                            fragmentTransaction.addToBackStack(null).commit();
+                                            collapsingToolbarLayout.setTitle("Queries");
+                                        }
+                                    }, DRAWER_DELAY);
+
                                     break;
 
                                 case R.id.sponsors_menuItem:

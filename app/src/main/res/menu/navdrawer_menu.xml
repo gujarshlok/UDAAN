@@ -16,6 +16,9 @@
             android:title = "My Registrations"
             android:id="@+id/myRegistrations_menuItem"
             android:icon="@drawable/svg_chat_white_48px"/>
+        <item android:title="Ask Queries"
+            android:id="@+id/chat"
+            android:icon="@drawable/about_firebase"/>
         <item
             android:title="@string/view_events"
             android:id="@+id/view_events"
