@@ -12,7 +12,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import sp.udaan.MainActivity;
+import sp.udaan.Activites.MainActivity;
 import sp.udaan.R;
 
 //import com.google.firebase.messaging.FirebaseMessagingService;

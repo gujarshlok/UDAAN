@@ -31,7 +31,7 @@ import sp.udaan.Activites.MyRegistrations;
 import sp.udaan.HelperClasses.Event;
 import sp.udaan.HelperClasses.MyEventAdapter;
 import sp.udaan.HelperClasses.RecyclerItemClickListener;
-import sp.udaan.MainActivity;
+import sp.udaan.Activites.MainActivity;
 import sp.udaan.R;
 
 public class MyEventsFragment extends Fragment {

@@ -1,4 +1,4 @@
-package sp.udaan;
+package sp.udaan.Activites;
 
 import android.content.Context;
 import android.content.Intent;
@@ -41,8 +41,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
-import sp.udaan.Activites.MapsActivity;
-import sp.udaan.Activites.SignInVideo;
 import sp.udaan.Fragments.AboutAppFragment;
 import sp.udaan.Fragments.CommitteeFragment;
 import sp.udaan.Fragments.ContactUsFragment;
@@ -329,6 +327,11 @@ public class MainActivity extends AppCompatActivity {
                                             collapsingToolbarLayout.setTitle("My Registrations");
                                         }
                                     }, DRAWER_DELAY);
+                                    break;
+
+                                case R.id.view_events:
+                                    Intent j = new Intent(MainActivity.this,MapsActivity.class);
+                                    startActivity(j);
                                     break;
 
                                 case R.id.sponsors_menuItem:

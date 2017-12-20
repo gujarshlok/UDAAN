@@ -16,6 +16,10 @@
             android:title = "My Registrations"
             android:id="@+id/myRegistrations_menuItem"
             android:icon="@drawable/svg_chat_white_48px"/>
+        <item
+            android:title="@string/view_events"
+            android:id="@+id/view_events"
+            android:icon="@drawable/svg_alarm_add_white_48px"/>
 
         <item
             android:title="@string/sponsors"

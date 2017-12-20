@@ -149,4 +149,5 @@
 
     <string name="notemptyfield">This field cannot be empty</string>
     <string name="title_activity_maps">Map</string>
+    <string name="view_events">View Events</string>
 </resources>
