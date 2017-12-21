@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -66,7 +67,7 @@ public class ChatFragment extends Fragment {
     private ImageButton mPhotoPickerButton;
     private EditText mMessageEditText;
     private Button mSendButton;
-
+    private RecyclerView mMessageRecyclerView;
     private String mUsername;
     private String mEmail;
 
@@ -79,6 +80,8 @@ public class ChatFragment extends Fragment {
     private FirebaseStorage mFirebaseStorage;
     private StorageReference mChatPhotosReference;
     private FirebaseRemoteConfig mRemoteConfig;
+
+    //FirebaseRecyclerAdapter<FriendlyMessage,chat_rec> adapter;
 
 
     public ChatFragment() {
@@ -111,12 +114,14 @@ public class ChatFragment extends Fragment {
         // Initialize references to views
         mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         mMessageListView = (ListView)view.findViewById(R.id.messageListView);
+        //mMessageRecyclerView= (RecyclerView) view.findViewById(R.id.messageRecyclerView);
         mPhotoPickerButton = (ImageButton) view.findViewById(R.id.photoPickerButton);
         mMessageEditText = (EditText)view.findViewById(R.id.messageEditText);
         mSendButton = (Button)view.findViewById(R.id.sendButton);
 
         // Initialize message ListView and its adapter
         final List<FriendlyMessage> friendlyMessages = new ArrayList<>();
+
         mMessageAdapter = new MessageAdapter(getActivity(), R.layout.item_message, friendlyMessages);
         mMessageListView.setAdapter(mMessageAdapter);
 
@@ -166,6 +171,8 @@ public class ChatFragment extends Fragment {
                 mMessageEditText.setText("");
             }
         });
+
+
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -262,8 +269,22 @@ public class ChatFragment extends Fragment {
             mChildEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
-                    mMessageAdapter.add(friendlyMessage);
+                    //for(DataSnapshot snapshot:dataSnapshot.getChildren()) {
+                      if(dataSnapshot.child("email").getValue().toString().equals(mAuth.getCurrentUser().getEmail().toString())||
+                              dataSnapshot.child("email").getValue().toString().equals("gujarshlok@gmail.com")) {
+                          FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
+                          mMessageAdapter.add(friendlyMessage);
+                      }
+                      else if(mAuth.getCurrentUser().getEmail().toString()=="gujarshlok@gmail.com")
+                      {
+                          FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
+                          mMessageAdapter.add(friendlyMessage);
+                      }
+//                      else
+//                      {
+//                          FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
+//                          mMessageAdapter.add(friendlyMessage);
+//                      }
                 }
 
                 @Override
