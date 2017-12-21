@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sp.udaan.Fragments.QuizFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="Question will appear here"
+            android:id="@+id/quizfragment_questiontext"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/quizfragment_optiongroup"
+            android:layout_margin="24dp">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option1"
+                android:padding="10dp"
+                android:id="@+id/quizfragment_radiooption1"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option2"
+                android:padding="10dp"
+                android:id="@+id/quizfragment_radiooption2"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option3"
+                android:padding="10dp"
+                android:id="@+id/quizfragment_radiooption3"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option4"
+                android:padding="10dp"
+                android:id="@+id/quizfragment_radiooption4"/>
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:id="@+id/quizfragment_submitbutton"/>
+
+    </LinearLayout>
+
+</FrameLayout>
