@@ -68,6 +68,7 @@ public class ChatFragment extends Fragment {
     private Button mSendButton;
 
     private String mUsername;
+    private String mEmail;
 
     //Firebase Instance Variables
     private FirebaseDatabase database;
@@ -158,7 +159,7 @@ public class ChatFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                FriendlyMessage message = new FriendlyMessage(mMessageEditText.getText().toString(), mUsername, null);
+                FriendlyMessage message = new FriendlyMessage(mMessageEditText.getText().toString(), mUsername, mEmail,null);
                 mFirebaseReference.push().setValue(message);
 
                 // Clear input box
@@ -172,7 +173,7 @@ public class ChatFragment extends Fragment {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(user != null){
                     //user signed-in
-                    OnSignedIn(user.getDisplayName());
+                    OnSignedIn(user.getDisplayName(),user.getEmail());
                    // Toast.makeText(Main, "You are Signed-in.Welcome to Friendly Chat App.",Toast.LENGTH_SHORT).show();
                 } else {
                     //user signed-out
@@ -217,7 +218,7 @@ public class ChatFragment extends Fragment {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        FriendlyMessage message = new FriendlyMessage(null, mUsername, downloadUrl.toString());
+                        FriendlyMessage message = new FriendlyMessage(null, mUsername, mEmail,downloadUrl.toString());
                         mFirebaseReference.push().setValue(message);
                     }
                 });
@@ -241,8 +242,9 @@ public class ChatFragment extends Fragment {
         super.onResume();
         mAuth.addAuthStateListener(mAuthStateListener);
     }
-    protected void OnSignedIn(String userName) {
+    protected void OnSignedIn(String userName,String userEmail) {
         mUsername = userName;
+        mEmail = userEmail;
         attachDatabaseReadListener();
     }
 
