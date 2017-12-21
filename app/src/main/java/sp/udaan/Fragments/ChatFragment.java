@@ -1,24 +1,30 @@
 package sp.udaan.Fragments;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.BuildConfig;
@@ -137,7 +143,21 @@ public class ChatFragment extends Fragment {
                 startActivityForResult(Intent.createChooser(i, "Complete action using"), RC_PHOTO_PICKER);
             }
         });
+        if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com")) {
 
+            mMessageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+//                    FriendlyMessage selectedFromList = (FriendlyMessage) mMessageListView.getItemAtPosition(position);
+//                    Log.e("TAG", String.valueOf(selectedFromList));
+                    TextView textView = (TextView) view.findViewById(R.id.nameTextView);
+                    String s= textView.getText().toString();
+                    Log.d("TAG",s);
+
+                    showpopup(s);
+                }
+            });
+        }
         // Enable Send button when there's text to send
         mMessageEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -275,7 +295,7 @@ public class ChatFragment extends Fragment {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
                       }
-                      else if(mAuth.getCurrentUser().getEmail().toString()=="gujarshlok@gmail.com")
+                      else if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com"))
                       {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
@@ -344,6 +364,44 @@ public class ChatFragment extends Fragment {
         Long message_length = mRemoteConfig.getLong(MESSAGE_LENGTH_KEY);
         mMessageEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(message_length.intValue())});
         //Log.d(TAG, MESSAGE_LENGTH_KEY + " = " + message_length);
+    }
+
+    private void showpopup(String s){
+
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.popup, null);
+        final TextInputEditText committeemessage = dialogView.findViewById(R.id.committeemessage);
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setView(dialogView);
+        dialogBuilder.setCancelable(false);
+        dialogBuilder.setMessage("Message");
+
+        dialogBuilder.setPositiveButton("Send", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Send email
+                final String message = committeemessage.getText().toString();
+                if(message.isEmpty()){
+                    Toast.makeText(getActivity(),"Please fill details first on website",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    //Send email
+
+
+                }
+            }
+        });
+
+        dialogBuilder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Cancel
+            }
+        });
+
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
     }
 
 
