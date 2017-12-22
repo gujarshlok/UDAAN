@@ -6,6 +6,8 @@ package sp.udaan.HelperClasses;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -32,8 +34,16 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         ImageView photoImageView = (ImageView) convertView.findViewById(R.id.photoImageView);
         TextView messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
         TextView authorTextView = (TextView) convertView.findViewById(R.id.nameTextView);
+        CardView x = (CardView) convertView.findViewById(R.id.msgCard);
 
         FriendlyMessage message = getItem(position);
+
+        String w = message.getEmail();
+        String z = message.getRec_email();
+
+        if(!w.equals(z)){
+            x.setCardBackgroundColor(Color.CYAN);
+        }
 
         boolean isPhoto = message.getPhotoUrl() != null;
         if (isPhoto) {
@@ -48,6 +58,8 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
             messageTextView.setText(message.getText());
         }
         authorTextView.setText(message.getName());
+
+
 
         return convertView;
     }

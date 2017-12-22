@@ -302,7 +302,7 @@ public class ChatFragment extends Fragment {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
                       }
-                      else if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com"))
+                      else if(mAuth.getCurrentUser().getEmail().equals("aditya.bhave41@gmail.com"))
                       {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
@@ -393,7 +393,7 @@ public class ChatFragment extends Fragment {
                     Toast.makeText(getActivity(),"Please Enter a message :)",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    mFirebaseReference.addValueEventListener(new ValueEventListener() {
+                    /*mFirebaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             //Log.e("gg","hello");
@@ -417,7 +417,8 @@ public class ChatFragment extends Fragment {
                         public void onCancelled(DatabaseError databaseError) {
 
                         }
-                    });
+                    });*/
+                    mFirebaseReference.push().setValue(new FriendlyMessage(committeemessage,mUsername,mEmail,null,email));
                     committeemessagetext.setText("");
 
                 }
