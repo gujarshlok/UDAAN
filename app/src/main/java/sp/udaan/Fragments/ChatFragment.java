@@ -383,7 +383,7 @@ public class ChatFragment extends Fragment {
                 //Send email
                 final String message = committeemessage.getText().toString();
                 if(message.isEmpty()){
-                    Toast.makeText(getActivity(),"Please fill details first on website",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(),"Please Enter a message :)",Toast.LENGTH_LONG).show();
                 }
                 else{
                     //Send email
