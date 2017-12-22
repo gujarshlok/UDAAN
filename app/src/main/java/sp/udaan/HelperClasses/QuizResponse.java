@@ -10,14 +10,14 @@ import java.util.Map;
 
 public class QuizResponse {
 
-    String name,email,correct;
+    String name,email,score;
     Map<String,String> time;
 
-    public QuizResponse(String name, String email, String correct, Map<String, String> time)
+    public QuizResponse(String name, String email, String score, Map<String, String> time)
     {
         this.name=name;
         this.email=email;
-        this.correct=correct;
+        this.score=score;
         this.time=time;
     }
 

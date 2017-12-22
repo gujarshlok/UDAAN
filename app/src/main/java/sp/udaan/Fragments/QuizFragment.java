@@ -31,18 +31,24 @@ import sp.udaan.R;
  */
 public class QuizFragment extends Fragment {
 
-    TextView questiontext;
+    TextView questiontext,questiontext2,questiontext3;
+    TextView previousscoretext;
+
     RadioGroup radioGroup;
     RadioButton selectedButton;
     RadioButton option1,option2,option3,option4;
+    RadioButton option21,option22,option23,option24;
+    RadioButton option31,option32,option33,option34;
     Button submitbutton;
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mItemDatabaseReference;
     private DatabaseReference mResponseReference;
 
-    String correct_answer;
+    String previous_score="Not Attempted";
+    String correct_answer1,correct_answer2,correct_answer3;
     String quizID;
+    int score=0;
     SharedPreferences userInfo;
     boolean already_checker;
 
@@ -72,21 +78,49 @@ public class QuizFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String question=String.valueOf(dataSnapshot.child("question").getValue());
+                String question=String.valueOf(dataSnapshot.child("question1").getValue());
+                String question2 = String.valueOf(dataSnapshot.child("question2").getValue());
+                String question3 = String.valueOf(dataSnapshot.child("question3").getValue());
 
-                String s_option1=String.valueOf(dataSnapshot.child("option1").getValue());
-                String s_option2=String.valueOf(dataSnapshot.child("option2").getValue());
-                String s_option3=String.valueOf(dataSnapshot.child("option3").getValue());
-                String s_option4=String.valueOf(dataSnapshot.child("option4").getValue());
+                String s_option1=String.valueOf(dataSnapshot.child("option11").getValue());
+                String s_option2=String.valueOf(dataSnapshot.child("option12").getValue());
+                String s_option3=String.valueOf(dataSnapshot.child("option13").getValue());
+                String s_option4=String.valueOf(dataSnapshot.child("option14").getValue());
 
-                correct_answer=String.valueOf(dataSnapshot.child("answer").getValue());
+                String s_option21=String.valueOf(dataSnapshot.child("option21").getValue());
+                String s_option22=String.valueOf(dataSnapshot.child("option22").getValue());
+                String s_option23=String.valueOf(dataSnapshot.child("option23").getValue());
+                String s_option24=String.valueOf(dataSnapshot.child("option24").getValue());
+
+                String s_option31=String.valueOf(dataSnapshot.child("option31").getValue());
+                String s_option32=String.valueOf(dataSnapshot.child("option32").getValue());
+                String s_option33=String.valueOf(dataSnapshot.child("option33").getValue());
+                String s_option34=String.valueOf(dataSnapshot.child("option34").getValue());
+
+                correct_answer1=String.valueOf(dataSnapshot.child("answer1").getValue());
+                correct_answer2=String.valueOf(dataSnapshot.child("answer2").getValue());
+                correct_answer3=String.valueOf(dataSnapshot.child("answer3").getValue());
+
                 quizID=String.valueOf(dataSnapshot.child("quizid").getValue());
 
                 questiontext.setText(question);
+                questiontext2.setText(question2);
+                questiontext3.setText(question3);
+
                 option1.setText(s_option1);
                 option2.setText(s_option2);
                 option3.setText(s_option3);
                 option4.setText(s_option4);
+
+                option21.setText(s_option21);
+                option22.setText(s_option22);
+                option23.setText(s_option23);
+                option24.setText(s_option24);
+
+                option31.setText(s_option31);
+                option32.setText(s_option32);
+                option33.setText(s_option33);
+                option34.setText(s_option34);
 
                 DataSnapshot d=dataSnapshot.child("Responses").child(quizID);
 
@@ -95,9 +129,11 @@ public class QuizFragment extends Fragment {
                     if (user_email.equals(String.valueOf(ds.child("email").getValue())))
                     {
                         already_checker=true;
+                        previous_score=String.valueOf(ds.child("score").getValue());
                     }
                 }
-
+                String scoreString="Your Score: "+previous_score;
+                previousscoretext.setText(scoreString);
             }
 
             @Override
@@ -107,22 +143,56 @@ public class QuizFragment extends Fragment {
         });
 
         questiontext=(TextView)view.findViewById(R.id.quizfragment_questiontext);
+        questiontext2=(TextView)view.findViewById(R.id.quizfragment_questiontext2);
+        questiontext3=(TextView)view.findViewById(R.id.quizfragment_questiontext3);
+
+        previousscoretext=(TextView)view.findViewById(R.id.quizfragment_previousscore);
+
         radioGroup=(RadioGroup)view.findViewById(R.id.quizfragment_optiongroup);
         submitbutton=(Button)view.findViewById(R.id.quizfragment_submitbutton);
+
         option1=(RadioButton)view.findViewById(R.id.quizfragment_radiooption1);
         option2=(RadioButton)view.findViewById(R.id.quizfragment_radiooption2);
         option3=(RadioButton)view.findViewById(R.id.quizfragment_radiooption3);
         option4=(RadioButton)view.findViewById(R.id.quizfragment_radiooption4);
 
+        option21=(RadioButton)view.findViewById(R.id.quizfragment_radiooption21);
+        option22=(RadioButton)view.findViewById(R.id.quizfragment_radiooption22);
+        option23=(RadioButton)view.findViewById(R.id.quizfragment_radiooption23);
+        option24=(RadioButton)view.findViewById(R.id.quizfragment_radiooption24);
+
+        option31=(RadioButton)view.findViewById(R.id.quizfragment_radiooption31);
+        option32=(RadioButton)view.findViewById(R.id.quizfragment_radiooption32);
+        option33=(RadioButton)view.findViewById(R.id.quizfragment_radiooption33);
+        option34=(RadioButton)view.findViewById(R.id.quizfragment_radiooption34);
 
         submitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 boolean option_checked=false;
+                boolean option2_checked=false;
+                boolean option3_checked=false;
+                boolean total_checker=false;
+
                 if (option1.isChecked()||option2.isChecked()||option3.isChecked()||option4.isChecked())
                 {
                     option_checked=true;
+                }
+
+                if (option21.isChecked()||option22.isChecked()||option23.isChecked()||option24.isChecked())
+                {
+                    option2_checked=true;
+                }
+
+                if (option31.isChecked()||option32.isChecked()||option33.isChecked()||option34.isChecked())
+                {
+                    option3_checked=true;
+                }
+
+                if (option_checked&&(option2_checked&&option3_checked))
+                {
+                    total_checker=true;
                 }
 
                 if (already_checker)
@@ -130,56 +200,101 @@ public class QuizFragment extends Fragment {
                     Toast.makeText(getActivity(),"Already Answered!",Toast.LENGTH_SHORT).show();
                 }else {
 
-                    if (option_checked) {
+                    if (total_checker) {
                         try {
-                            boolean rightanswer = false;
-                            switch (Integer.parseInt(correct_answer)) {
+                            switch (Integer.parseInt(correct_answer1)) {
                                 case 1:
                                     if (option1.isChecked()) {
-                                        rightanswer = true;
+                                        score++;
                                     }
                                     break;
 
                                 case 2:
                                     if (option2.isChecked()) {
-                                        rightanswer = true;
+                                        score++;
                                     }
                                     break;
 
                                 case 3:
                                     if (option3.isChecked()) {
-                                        rightanswer = true;
+                                        score++;
                                     }
                                     break;
 
                                 case 4:
                                     if (option4.isChecked()) {
-                                        rightanswer = true;
+                                        score++;
                                     }
                                     break;
 
                                 default:
                             }
 
+                            switch (Integer.parseInt(correct_answer2)) {
+                                case 1:
+                                    if (option21.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
 
-                            if (rightanswer) {
-                                Toast.makeText(getActivity(), "Correct Answer!", Toast.LENGTH_SHORT).show();
-                                mResponseReference.child(quizID).push().setValue(new QuizResponse(user_name, user_email, "1", ServerValue.TIMESTAMP));
+                                case 2:
+                                    if (option22.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
 
-                            } else {
-                                Toast.makeText(getActivity(), "Wrong Answer:(", Toast.LENGTH_SHORT).show();
-                                mResponseReference.child(quizID).push().setValue(new QuizResponse(user_name, user_email, "0", ServerValue.TIMESTAMP));
+                                case 3:
+                                    if (option23.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
+
+                                case 4:
+                                    if (option24.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
+
+                                default:
                             }
+                            switch (Integer.parseInt(correct_answer3)) {
+                                case 1:
+                                    if (option31.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
+
+                                case 2:
+                                    if (option32.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
+
+                                case 3:
+                                    if (option33.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
+
+                                case 4:
+                                    if (option34.isChecked()) {
+                                        score++;
+                                    }
+                                    break;
+
+                                default:
+                            }
+
+                            Toast.makeText(getActivity(),"You scored: "+score+"/3",Toast.LENGTH_SHORT).show();
+                            mResponseReference.child(quizID).push().setValue(new QuizResponse(user_name, user_email, String.valueOf(score), ServerValue.TIMESTAMP));
 
                         } catch (Exception e) {
                             Toast.makeText(getActivity(), "Error Occured", Toast.LENGTH_SHORT).show();
                         }
                     }else {
-                        Toast.makeText(getActivity(),"Please select an option",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"Please select an option for each Question",Toast.LENGTH_SHORT).show();
                     }
                 }
-
-
             }
         });
 
