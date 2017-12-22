@@ -77,7 +77,7 @@ public class ChatFragment extends Fragment {
     private RecyclerView mMessageRecyclerView;
     private String mUsername;
     private String mEmail;
-    String mailReceived;
+    private String mailReceived="";
 
     //Firebase Instance Variables
     private FirebaseDatabase database;
@@ -150,15 +150,12 @@ public class ChatFragment extends Fragment {
             mMessageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view,
                                         int position, long id) {
-//                    FriendlyMessage selectedFromList = (FriendlyMessage) mMessageListView.getItemAtPosition(position);
-//                    Log.e("TAG", String.valueOf(selectedFromList));
-                    TextView textView = (TextView) view.findViewById(R.id.nameTextView);
-                    TextView emailView=(TextView)view.findViewById(R.id.messageTextView);
-                    String text= textView.getText().toString();
-                    String email=emailView.getText().toString();
-                   // Log.d("TAG",s);
+                    TextView nameView = (TextView) view.findViewById(R.id.nameTextView);
+                    TextView messageView=(TextView)view.findViewById(R.id.messageTextView);
+                    String name= nameView.getText().toString();
+                    String message=messageView.getText().toString();
 
-                    showpopup(text,email);
+                    showpopup(name,message);
                 }
             });
         }
@@ -293,25 +290,18 @@ public class ChatFragment extends Fragment {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     //for(DataSnapshot snapshot:dataSnapshot.getChildren()) {
-                      if(dataSnapshot.child("rec_email").getValue().toString().equals(mAuth.getCurrentUser().getEmail().toString())) {
+                      if(dataSnapshot.child("rec_email").getValue().toString().equals(mAuth.getCurrentUser().getEmail().toString())||
+                              dataSnapshot.child("rec_email").getValue().toString().equals("gujarshlok@gmail.com")) {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
                       }
-                      if(dataSnapshot.child("rec_email").getValue().toString().equals("gujarshlok@gmail.com"))
+//
+                      else if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com"))
                       {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
                       }
-                      else if(mAuth.getCurrentUser().getEmail().equals("aditya.bhave41@gmail.com"))
-                      {
-                          FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
-                          mMessageAdapter.add(friendlyMessage);
-                      }
-//                      else
-//                      {
-//                          FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
-//                          mMessageAdapter.add(friendlyMessage);
-//                      }
+//
                 }
 
                 @Override
@@ -373,7 +363,7 @@ public class ChatFragment extends Fragment {
         //Log.d(TAG, MESSAGE_LENGTH_KEY + " = " + message_length);
     }
 
-    private void showpopup(final String email,final String text){
+    private void showpopup(final String name,final String message){
 
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.popup, null);
@@ -393,20 +383,17 @@ public class ChatFragment extends Fragment {
                     Toast.makeText(getActivity(),"Please Enter a message :)",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    /*mFirebaseReference.addValueEventListener(new ValueEventListener() {
+                    mFirebaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             //Log.e("gg","hello");
                             for (DataSnapshot ds:dataSnapshot.getChildren())
                             {
-                                if(ds.child("name").getValue().toString().equals(email)
-                                        &&ds.child("text").getValue().toString().equals(text))
+                                if(ds.child("name").getValue().toString().equals(name)
+                                        &&ds.child("text").getValue().toString().equals(message))
                                 {
                                     mailReceived=ds.child("email").getValue().toString();
-                                    Log.d("TAG",mailReceived);
-                                    FriendlyMessage message1 = new FriendlyMessage(committeemessage, mUsername, mEmail,null,mailReceived);
-                                    mFirebaseReference.push().setValue(message1);
-                                    //Toast.makeText(getActivity(),"Message Sent!",Toast.LENGTH_SHORT).show();
+                                    Log.d("mail",mailReceived);
                                     break;
                                 }
                                // Log.d("HH", String.valueOf(ds));
@@ -417,8 +404,12 @@ public class ChatFragment extends Fragment {
                         public void onCancelled(DatabaseError databaseError) {
 
                         }
-                    });*/
-                    mFirebaseReference.push().setValue(new FriendlyMessage(committeemessage,mUsername,mEmail,null,email));
+                    });
+                    FriendlyMessage message = new FriendlyMessage(committeemessage, mUsername, mEmail,null,mailReceived);
+                    //mFirebaseReference.push().setValue(new FriendlyMessage(committeemessage,mUsername,mEmail,null,mailReceived));
+                    mFirebaseReference.push().setValue(message);
+                    Log.e("error","hi");
+                    Toast.makeText(getActivity(),"Message Sent!",Toast.LENGTH_SHORT).show();
                     committeemessagetext.setText("");
 
                 }
