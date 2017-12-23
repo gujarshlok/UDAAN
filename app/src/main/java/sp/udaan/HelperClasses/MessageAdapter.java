@@ -34,6 +34,7 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         ImageView photoImageView = (ImageView) convertView.findViewById(R.id.photoImageView);
         TextView messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
         TextView authorTextView = (TextView) convertView.findViewById(R.id.nameTextView);
+        TextView emailTextView=(TextView)convertView.findViewById(R.id.emailTextView);
         CardView x = (CardView) convertView.findViewById(R.id.msgCard);
 
         FriendlyMessage message = getItem(position);
@@ -49,15 +50,18 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         if (isPhoto) {
             messageTextView.setVisibility(View.GONE);
             photoImageView.setVisibility(View.VISIBLE);
+            emailTextView.setVisibility(View.GONE);
             Glide.with(photoImageView.getContext())
                     .load(message.getPhotoUrl())
                     .into(photoImageView);
         } else {
             messageTextView.setVisibility(View.VISIBLE);
             photoImageView.setVisibility(View.GONE);
+            emailTextView.setVisibility(View.GONE);
             messageTextView.setText(message.getText());
         }
         authorTextView.setText(message.getName());
+        emailTextView.setText(message.getEmail());
 
 
 
