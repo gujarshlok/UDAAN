@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "sp.udaan"
         minSdkVersion 17
@@ -48,6 +47,7 @@ dependencies {
     compile 'com.firebaseui:firebase-ui-auth:1.0.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.google.android.gms:play-services-maps:11.2.0'
+    compile 'com.github.developer-shivam:Crescento:1.2.1'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

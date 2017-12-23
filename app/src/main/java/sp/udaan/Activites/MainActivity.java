@@ -23,6 +23,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,6 +54,7 @@ import sp.udaan.Fragments.QuizFragment;
 import sp.udaan.Fragments.SponsorsFragment;
 import sp.udaan.HelperClasses.CustomPagerAdapter;
 import sp.udaan.HelperClasses.CustomViewPager;
+import sp.udaan.HelperClasses.SetCrescentoImage;
 import sp.udaan.R;
 
 import static com.firebase.ui.auth.ui.AcquireEmailHelper.RC_SIGN_IN;
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     CustomPagerAdapter mCustomPagerAdapter;
     CustomViewPager mViewPager;
+    SetCrescentoImage mSetCrescentoImage;
 
     private static final long DRAWER_DELAY = 250;
     private static int NUM_PAGES = 3;
@@ -122,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             currentCategory=getIntent().getStringExtra("EventCategory");
+
         }catch (Exception e)
         {
             currentCategory="Literary Arts";
@@ -205,21 +209,27 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        //Carousel on top - commented for future reference
         //ViewPager
-        mCustomPagerAdapter = new CustomPagerAdapter(this);
-        mViewPager = (CustomViewPager) findViewById(R.id.viewpager_main);
-        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
-        mViewPager.setAdapter(mCustomPagerAdapter);
-        indicator.setViewPager(mViewPager);
+//        mCustomPagerAdapter = new CustomPagerAdapter(this);
+//        mViewPager = (CustomViewPager) findViewById(R.id.viewpager_main);
+//        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+//        mViewPager.setAdapter(mCustomPagerAdapter);
+//        indicator.setViewPager(mViewPager);
+//
+//        final Handler h = new Handler(Looper.getMainLooper());
+//        final Runnable r = new Runnable() {
+//            public void run() {
+//                mViewPager.setCurrentItem((mViewPager.getCurrentItem() + 1) % NUM_PAGES, true);
+//                h.postDelayed(this, 3000);
+//            }
+//        };
+//        h.postDelayed(r, 3000);
 
-        final Handler h = new Handler(Looper.getMainLooper());
-        final Runnable r = new Runnable() {
-            public void run() {
-                mViewPager.setCurrentItem((mViewPager.getCurrentItem() + 1) % NUM_PAGES, true);
-                h.postDelayed(this, 3000);
-            }
-        };
-        h.postDelayed(r, 3000);
+
+        //Code for Crescento image (image with curve at the bottom)
+//        mSetCrescentoImage = new SetCrescentoImage(this);
+//        LayoutInflater.from(this).inflate(R.layout.crescento_image, null);
 
 
         //instantiation
