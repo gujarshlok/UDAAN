@@ -37,7 +37,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
@@ -152,10 +151,15 @@ public class ChatFragment extends Fragment {
                                         int position, long id) {
                     TextView nameView = (TextView) view.findViewById(R.id.nameTextView);
                     TextView messageView=(TextView)view.findViewById(R.id.messageTextView);
+                    TextView emailView=(TextView)view.findViewById(R.id.emailTextView);
                     String name= nameView.getText().toString();
                     String message=messageView.getText().toString();
+                    String email=emailView.getText().toString();
+                    Log.d("name",name);
+                    Log.d("message",message);
 
-                    showpopup(name,message);
+
+                    showpopup(email,name);
                 }
             });
         }
@@ -363,7 +367,7 @@ public class ChatFragment extends Fragment {
         //Log.d(TAG, MESSAGE_LENGTH_KEY + " = " + message_length);
     }
 
-    private void showpopup(final String name,final String message){
+    private void showpopup(final String email,final String name){
 
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.popup, null);
@@ -372,7 +376,7 @@ public class ChatFragment extends Fragment {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
         dialogBuilder.setView(dialogView);
         dialogBuilder.setCancelable(false);
-        dialogBuilder.setMessage("Message");
+        dialogBuilder.setMessage("Reply to "+name);
 
         dialogBuilder.setPositiveButton("Send", new DialogInterface.OnClickListener() {
             @Override
@@ -383,30 +387,29 @@ public class ChatFragment extends Fragment {
                     Toast.makeText(getActivity(),"Please Enter a message :)",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    mFirebaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            //Log.e("gg","hello");
-                            for (DataSnapshot ds:dataSnapshot.getChildren())
-                            {
-                                if(ds.child("name").getValue().toString().equals(name)
-                                        &&ds.child("text").getValue().toString().equals(message))
-                                {
-                                    mailReceived=ds.child("email").getValue().toString();
-                                    Log.d("mail",mailReceived);
-                                    break;
-                                }
-                               // Log.d("HH", String.valueOf(ds));
-                            }
-
-                        }
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-                    FriendlyMessage message = new FriendlyMessage(committeemessage, mUsername, mEmail,null,mailReceived);
-                    //mFirebaseReference.push().setValue(new FriendlyMessage(committeemessage,mUsername,mEmail,null,mailReceived));
+//                    mFirebaseReference.addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(DataSnapshot dataSnapshot) {
+//                            //Log.e("gg","hello");
+//                            for (DataSnapshot ds:dataSnapshot.getChildren())
+//                            {
+//                                if(ds.child("name").getValue().toString().equals(name))
+//                                    if(ds.child("text").getValue().toString().equals(message))
+//                                {
+//                                    mailReceived=ds.child("email").getValue().toString();
+//                                    Log.d("mail",mailReceived);
+//                                    break;
+//                                }
+//                               // Log.d("HH", String.valueOf(ds));
+//                            }
+//
+//                        }
+//                        @Override
+//                        public void onCancelled(DatabaseError databaseError) {
+//
+//                        }
+//                    });
+                    FriendlyMessage message = new FriendlyMessage(committeemessage, mUsername, mEmail,null,email);
                     mFirebaseReference.push().setValue(message);
                     Log.e("error","hi");
                     Toast.makeText(getActivity(),"Message Sent!",Toast.LENGTH_SHORT).show();
