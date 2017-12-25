@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
                                                 fragmentTransaction.addToBackStack(backStageName).commit();
                                             }
                                             appBarLayout.setExpanded(true, true);
-                                            collapsingToolbarLayout.setTitle("Matrix 17");
+                                            collapsingToolbarLayout.setTitle("UDAAN");
                                         }
                                     }, DRAWER_DELAY);
                                     break;
@@ -556,7 +556,7 @@ public class MainActivity extends AppCompatActivity {
             drawerLayout.closeDrawers();
         else {
             navigationView.getMenu().getItem(0).setChecked(true);
-            collapsingToolbarLayout.setTitle("Matrix 17");
+            collapsingToolbarLayout.setTitle("UDAAN");
             appBarLayout.setExpanded(true, true);
 
             super.onBackPressed();

@@ -155,7 +155,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SUBMIT"
+            android:textSize="17dp"
+            android:background="@drawable/rounded_button"
             android:layout_marginBottom="40dp"
+            android:textColor="#fff"
             android:id="@+id/quizfragment_submitbutton"/>
     </LinearLayout>
     </ScrollView>
