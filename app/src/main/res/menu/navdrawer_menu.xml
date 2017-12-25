@@ -20,11 +20,11 @@
         <item
             android:title="Quiz"
             android:id="@+id/quiz_menuItem"
-            android:icon="@drawable/ic_check_black_24dp"/>
+            android:icon="@drawable/quiz"/>
 
         <item android:title="Ask Queries"
             android:id="@+id/chat"
-            android:icon="@drawable/about_firebase"/>
+            android:icon="@drawable/ask2"/>
         <item
             android:title="@string/view_events"
             android:id="@+id/view_events"
