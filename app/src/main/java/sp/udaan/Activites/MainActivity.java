@@ -1,5 +1,6 @@
 package sp.udaan.Activites;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +24,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     String currentCategory;
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -211,20 +212,20 @@ public class MainActivity extends AppCompatActivity {
 
         //Carousel on top - commented for future reference
         //ViewPager
-//        mCustomPagerAdapter = new CustomPagerAdapter(this);
-//        mViewPager = (CustomViewPager) findViewById(R.id.viewpager_main);
-//        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
-//        mViewPager.setAdapter(mCustomPagerAdapter);
-//        indicator.setViewPager(mViewPager);
-//
-//        final Handler h = new Handler(Looper.getMainLooper());
-//        final Runnable r = new Runnable() {
-//            public void run() {
-//                mViewPager.setCurrentItem((mViewPager.getCurrentItem() + 1) % NUM_PAGES, true);
-//                h.postDelayed(this, 3000);
-//            }
-//        };
-//        h.postDelayed(r, 3000);
+        mCustomPagerAdapter = new CustomPagerAdapter(this);
+        mViewPager = (CustomViewPager) findViewById(R.id.viewpager_main);
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+        mViewPager.setAdapter(mCustomPagerAdapter);
+        indicator.setViewPager(mViewPager);
+
+        final Handler h = new Handler(Looper.getMainLooper());
+        final Runnable r = new Runnable() {
+            public void run() {
+                mViewPager.setCurrentItem((mViewPager.getCurrentItem() + 1) % NUM_PAGES, true);
+                h.postDelayed(this, 3000);
+            }
+        };
+        h.postDelayed(r, 3000);
 
 
         //Code for Crescento image (image with curve at the bottom)

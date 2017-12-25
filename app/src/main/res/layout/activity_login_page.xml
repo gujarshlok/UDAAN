@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent"
     tools:context="sp.udaan.Activites.LoginPage"
     android:orientation="vertical">
@@ -11,24 +12,23 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_gravity="center"
         android:id="@+id/uProfile"
         android:layout_marginTop="50dp"/>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/edittext"
             android:layout_margin="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/uName"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/padding10dp"
                 android:textSize="24sp"
                 android:text="asdfsdf" />
 
@@ -36,93 +36,102 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/uEmail"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/padding10dp"
                 android:textSize="24sp"
                 android:text="asdfsdf" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/uType"
+                android:textColor="#000"
+                android:layout_marginLeft="@dimen/padding10dp"
                 android:textSize="24sp"
                 android:text="asdfsdf" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="From"-->
+                <!--android:textSize="20sp"/>-->
+            <!--<EditText-->
+                <!--android:layout_width="60dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/uClass"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:hint="eg TE"/>-->
+        <!--</LinearLayout>-->
+
+    <!--</android.support.v7.widget.CardView>-->
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/uClass"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edit_text_height"
+        android:background="@drawable/rounded_edittext"
+        android:padding="@dimen/padding8dp"
+        android:hint="Enter Year  eg:TE"
+        android:textSize="20sp"
+        android:inputType="textAutoComplete"
+        android:layout_margin="@dimen/padding8dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Choose Branch"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="From"
-                android:textSize="20sp"/>
-            <EditText
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/uClass"
-                android:layout_marginLeft="10dp"
-                android:hint="eg TE"/>
-        </LinearLayout>
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="130dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_margin="@dimen/padding8dp"
+            android:layout_marginLeft="30dp"></android.support.v7.widget.AppCompatSpinner>
+    </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/uContact"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
+            android:background="@drawable/rounded_edittext"
+            android:padding="@dimen/padding8dp"
+            android:hint="Enter Contact Number"
+            android:textSize="20sp"
+            android:inputType="textAutoComplete"
+            android:layout_margin="@dimen/padding8dp"/>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Branch"
-                android:textSize="20sp"/>
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"/>
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact"
-                android:textSize="20sp"/>
-            <EditText
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:inputType="number"
-                android:id="@+id/uContact"/>
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register!"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/rounded_button"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:layout_gravity="center"
+        android:text="Register"
         android:onClick="regUser"
-        android:id="@+id/regButton"/>
+        android:id="@+id/regButton"
+        android:textSize="15sp" />
 
 </LinearLayout>
+
+
 

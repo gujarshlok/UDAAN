@@ -1,17 +1,18 @@
 package sp.udaan.Activites;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,16 +46,17 @@ public class LoginPage extends AppCompatActivity {
     SharedPreferences shouldMap;
 
     TextView uname,uemail,utype;
-    EditText uclass,ucontact;
+    TextInputEditText uclass,ucontact;
     ImageView uprofile;
-    Spinner spinner;
+    AppCompatSpinner spinner;
     Button b;
-    String x,z;
+    String x,y,z;
 
     private ArrayList admin, eventOrg;
 
 
     String fixedFrom;
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -143,10 +145,9 @@ public class LoginPage extends AppCompatActivity {
         uemail =  (TextView) findViewById(R.id.uEmail);
         utype = (TextView) findViewById(R.id.uType);
         uprofile = (ImageView) findViewById(R.id.uProfile);
-        uclass = (EditText) findViewById(R.id.uClass);
-        spinner = (Spinner) findViewById(R.id.spinner);
-        ucontact = (EditText) findViewById(R.id.uContact);
-
+        uclass = (TextInputEditText) findViewById(R.id.uClass);
+        spinner = (AppCompatSpinner) findViewById(R.id.spinner);
+        ucontact = (TextInputEditText) findViewById(R.id.uContact);
         uname.setText(name);
         uemail.setText(email);
         utype.setText(type);
@@ -163,6 +164,8 @@ public class LoginPage extends AppCompatActivity {
         categories.add("EXTC");
         categories.add("ETRX");
 
+
+
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
@@ -171,7 +174,6 @@ public class LoginPage extends AppCompatActivity {
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
-
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -231,12 +233,17 @@ public class LoginPage extends AppCompatActivity {
             Toast.makeText(LoginPage.this,"Dont leave any field blank :)",Toast.LENGTH_SHORT).show();
             return;
         }
+        if(ucontact.getText().toString().length()!=10)
+        {
+            Toast.makeText(LoginPage.this,"Enter a valid Contact Number :)",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         phoneNo = ucontact.getText().toString();
         z = uclass.getText().toString();
         fixedFrom = z + " " + x;
         mPushDatabaseReference.push().setValue(new User(name,email,profile,uid,type,fixedFrom,phoneNo));
-        Toast.makeText(this,"You are    registered",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"You are registered !!",Toast.LENGTH_SHORT).show();
         spa.putBoolean("firstSignIn",false);
         spa.commit();
         sp.putString("from", fixedFrom);

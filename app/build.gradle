@@ -27,6 +27,7 @@ dependencies {
 
 
 
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:26.0.2'
     compile 'me.relex:circleindicator:1.2.2@aar'
     compile 'com.android.support:design:26.0.2'
