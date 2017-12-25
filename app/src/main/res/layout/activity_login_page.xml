@@ -129,7 +129,8 @@
         android:text="Register"
         android:onClick="regUser"
         android:id="@+id/regButton"
-        android:textSize="15sp" />
+        android:textColor="#fff"
+        android:textSize="17dp" />
 
 </LinearLayout>
 
