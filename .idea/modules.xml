@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UDAAN.iml" filepath="$PROJECT_DIR$/UDAAN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/UDAAN.iml" filepath="$PROJECT_DIR$/.idea/UDAAN.iml" />
+      <module fileurl="file://F:\Udaan18\NewUDAAN\UDAAN\UDAAN.iml" filepath="F:\Udaan18\NewUDAAN\UDAAN\UDAAN.iml" />
       <module fileurl="file://C:\Users\nikhi\AndroidStudioProjects\UDAAN\.idea\UDAAN.iml" filepath="C:\Users\nikhi\AndroidStudioProjects\UDAAN\.idea\UDAAN.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\Udaan18\NewUDAAN\UDAAN\app\app.iml" filepath="F:\Udaan18\NewUDAAN\UDAAN\app\app.iml" />
     </modules>
   </component>
 </project>

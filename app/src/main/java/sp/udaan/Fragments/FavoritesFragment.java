@@ -72,10 +72,10 @@ public class FavoritesFragment extends Fragment {
         //}
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mItemDatabaseReference1 = mFirebaseDatabase.getReference().child("Events").child("Championships");
-        mItemDatabaseReference2 = mFirebaseDatabase.getReference().child("Events").child("Talks and Exhibitions");
-        mItemDatabaseReference3 = mFirebaseDatabase.getReference().child("Events").child("Featured");
-        mItemDatabaseReference4 = mFirebaseDatabase.getReference().child("Events").child("Fun");
+        mItemDatabaseReference1 = mFirebaseDatabase.getReference().child("Events").child("Literary Arts");
+        mItemDatabaseReference2 = mFirebaseDatabase.getReference().child("Events").child("Performing Arts");
+        mItemDatabaseReference3 = mFirebaseDatabase.getReference().child("Events").child("Fun Events");
+        mItemDatabaseReference4 = mFirebaseDatabase.getReference().child("Events").child("Featured");
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.fragmentRecyclerView);
         mRecyclerView.setHasFixedSize(true);
