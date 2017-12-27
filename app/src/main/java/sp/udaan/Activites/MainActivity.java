@@ -31,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
     CustomPagerAdapter mCustomPagerAdapter;
     CustomViewPager mViewPager;
     SetCrescentoImage mSetCrescentoImage;
+
+    KenBurnsView crescent_kenburns;
 
     private static final long DRAWER_DELAY = 250;
     private static int NUM_PAGES = 3;
@@ -154,6 +157,25 @@ public class MainActivity extends AppCompatActivity {
         View headerview = navigationView.getHeaderView(0);
         navDrawerUsername = (TextView) headerview.findViewById(R.id.NavigationDrawer_Username);
         navDrawerUseremailid = (TextView) headerview.findViewById(R.id.NavigationDrawer_UserEmail);
+        crescent_kenburns=(KenBurnsView)findViewById(R.id.cresent_kenburns);
+
+        try{
+            if (currentCategory.equals("Literary Arts"))
+            {
+                crescent_kenburns.setImageResource(R.drawable.queens_necklace);
+            }else if (currentCategory.equals("Performing Arts"))
+            {
+                crescent_kenburns.setImageResource(R.drawable.versova_beach);
+            }else if (currentCategory.equals("Fun Events")){
+                crescent_kenburns.setImageResource(R.drawable.sanjay_gandhi);
+            }else {
+                crescent_kenburns.setImageResource(R.drawable.carter_road);
+            }
+        }catch ( Exception e)
+        {
+            crescent_kenburns.setImageResource(R.drawable.queens_necklace);
+        }
+
 
         shouldMap=getSharedPreferences("Mapsharedprefs",Context.MODE_APPEND);
         shouldMapeditor=shouldMap.edit();
@@ -212,7 +234,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Carousel on top - commented for future reference
         //ViewPager
-        mCustomPagerAdapter = new CustomPagerAdapter(this);
+
+
+        /*mCustomPagerAdapter = new CustomPagerAdapter(this);
         mViewPager = (CustomViewPager) findViewById(R.id.viewpager_main);
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         mViewPager.setAdapter(mCustomPagerAdapter);
@@ -225,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
                 h.postDelayed(this, 3000);
             }
         };
-        h.postDelayed(r, 3000);
+        h.postDelayed(r, 3000);*/
 
 
         //Code for Crescento image (image with curve at the bottom)
