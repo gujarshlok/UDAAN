@@ -35,21 +35,26 @@
                 app:expandedTitleMarginBottom="48dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <developer.shivam.crescento.CrescentoContainer
-                    android:id="@+id/myImageView"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    attribute:curvature="25dp"
-                    android:elevation="8dp"
-                    android:layout_height="wrap_content">
-
-                    <com.flaviofaria.kenburnsview.KenBurnsView
-                        android:id="@+id/cresent_kenburns"
+                    android:layout_height="match_parent">
+                    <developer.shivam.crescento.CrescentoContainer
+                        android:id="@+id/myImageView"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:src="@drawable/loc14"
-                        android:scaleType="centerCrop"/>
+                        attribute:curvature="25dp"
+                        android:elevation="8dp"
+                        attribute:layout_collapseMode="parallax"
+                        android:layout_height="wrap_content">
 
-                </developer.shivam.crescento.CrescentoContainer>
+                        <com.flaviofaria.kenburnsview.KenBurnsView
+                            android:id="@+id/cresent_kenburns"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:src="@drawable/loc14"
+                            android:scaleType="centerCrop"/>
+
+                    </developer.shivam.crescento.CrescentoContainer>
+            </FrameLayout>
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar_main"
