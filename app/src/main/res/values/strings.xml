@@ -2,22 +2,22 @@
     <string name="app_name">UDAAN</string>
 
     <string name="playstore_link">https://play.google.com/store/apps/details?id=spit.matrix17</string>
-    <string name="github_link">https://github.com/tejas4888/Matrix2k17</string>
+    <string name="github_link">https://github.com/gujarshlok/UDAAN</string>
 
     <string name="visit_website">Visit website</string>
     <string name="matrix_website">http://www.matrixthefest.in</string>
 
     <string name="follow_facebook">Facebook</string>
-    <string name="matrix_fb_link">https://www.facebook.com/TheMatrixSPIT</string>
+    <string name="udaan_fb_link">https://www.facebook.com/UdaanCultFest</string>
 
     <string name="follow_twitter">Twitter</string>
-    <string name="matrix_twit_link">https://twitter.com/SPIT_Matrix</string>
+    <string name="udaan_twit_link">https://twitter.com/SPIT_Matrix</string>
 
     <string name="follow_instagram">Instagram</string>
-    <string name="matrix_insta_link">https://www.instagram.com/matrixthefest</string>
+    <string name="udaan_insta_link">https://www.instagram.com/udaan2018</string>
 
     <string name="follow_snapchat">Snapchat</string>
-    <string name="matrix_snap_link">https://www.snapchat.com/add/matrixthefest</string>
+    <string name="udaan_snap_link">https://www.snapchat.com/add/matrixthefest</string>
 
     <string name="sponsors">Sponsors</string>
     <string name="share">Share app</string>

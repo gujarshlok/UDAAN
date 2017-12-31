@@ -3,7 +3,6 @@ package sp.udaan.Fragments;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -41,7 +40,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,6 +75,9 @@ public class ChatFragment extends Fragment {
     private String mUsername;
     private String mEmail;
     private String mailReceived="";
+    private String ts;
+    private Long time;
+    private String committee="Committee";
 
     //Firebase Instance Variables
     private FirebaseDatabase database;
@@ -122,7 +123,7 @@ public class ChatFragment extends Fragment {
         mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         mMessageListView = (ListView)view.findViewById(R.id.messageListView);
         //mMessageRecyclerView= (RecyclerView) view.findViewById(R.id.messageRecyclerView);
-        mPhotoPickerButton = (ImageButton) view.findViewById(R.id.photoPickerButton);
+       // mPhotoPickerButton = (ImageButton) view.findViewById(R.id.photoPickerButton);
         mMessageEditText = (EditText)view.findViewById(R.id.messageEditText);
         mSendButton = (Button)view.findViewById(R.id.sendButton);
 
@@ -134,17 +135,23 @@ public class ChatFragment extends Fragment {
 
         // Initialize progress bar
         mProgressBar.setVisibility(ProgressBar.INVISIBLE);
+         time = System.currentTimeMillis()/1000;
+         ts = time.toString();
 
-        mPhotoPickerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
-                i.setType("image/jpeg");
-                i.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                startActivityForResult(Intent.createChooser(i, "Complete action using"), RC_PHOTO_PICKER);
-            }
-        });
-        if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com")) {
+//        mPhotoPickerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+//                i.setType("image/jpeg");
+//                i.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+//                startActivityForResult(Intent.createChooser(i, "Complete action using"), RC_PHOTO_PICKER);
+//            }
+//        });
+        if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com")
+                ||mAuth.getCurrentUser().getEmail().equals("gandhidisha0@gmail.com")
+                ||mAuth.getCurrentUser().getEmail().equals("Nbaakhre@gmail.com")
+                ||mAuth.getCurrentUser().getEmail().equals("sanskruti23.jaipuria@gmail.com")
+                ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")) {
 
             mMessageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view,
@@ -152,9 +159,11 @@ public class ChatFragment extends Fragment {
                     TextView nameView = (TextView) view.findViewById(R.id.nameTextView);
                     TextView messageView=(TextView)view.findViewById(R.id.messageTextView);
                     TextView emailView=(TextView)view.findViewById(R.id.emailTextView);
+                    TextView nametoView=(TextView)view.findViewById(R.id.nametoTextView);
                     String name= nameView.getText().toString();
                     String message=messageView.getText().toString();
                     String email=emailView.getText().toString();
+                    String nameto=nametoView.getText().toString();
                     Log.d("name",name);
                     Log.d("message",message);
 
@@ -188,11 +197,22 @@ public class ChatFragment extends Fragment {
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com")
+                        ||mAuth.getCurrentUser().getEmail().equals("gandhidisha0@gmail.com")
+                        ||mAuth.getCurrentUser().getEmail().equals("Nbaakhre@gmail.com")
+                        ||mAuth.getCurrentUser().getEmail().equals("sanskruti23.jaipuria@gmail.com")
+                        ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")) {
 
-                FriendlyMessage message = new
-                        FriendlyMessage(mMessageEditText.getText().toString(), mUsername, mEmail,null,mEmail);
-                mFirebaseReference.push().setValue(message);
-
+                    FriendlyMessage message = new
+                            FriendlyMessage(mMessageEditText.getText().toString(), mUsername, mEmail, null, mEmail, ts, "Users");
+                    mFirebaseReference.push().setValue(message);
+                }
+                else
+                {
+                    FriendlyMessage message = new
+                            FriendlyMessage(mMessageEditText.getText().toString(), mUsername, mEmail, null, mEmail, ts, "Committee");
+                    mFirebaseReference.push().setValue(message);
+                }
                 // Clear input box
                 mMessageEditText.setText("");
             }
@@ -239,20 +259,20 @@ public class ChatFragment extends Fragment {
                 Toast.makeText(getActivity(), "Sign-In Cancelled", Toast.LENGTH_SHORT).show();
                 //finish();
             } else if (requestCode == RC_PHOTO_PICKER && resultCode == RESULT_OK) {
-                Uri imageUri = data.getData();
-
-                //get the reference to stored file at database
-                StorageReference photoReference = mChatPhotosReference.child(imageUri.getLastPathSegment());
-
-                //upload file to firebase
-                photoReference.putFile(imageUri).addOnSuccessListener(getActivity(), new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        FriendlyMessage message = new FriendlyMessage(null, mUsername, mEmail,downloadUrl.toString(),null);
-                        mFirebaseReference.push().setValue(message);
-                    }
-                });
+//                Uri imageUri = data.getData();
+//
+//                //get the reference to stored file at database
+//                StorageReference photoReference = mChatPhotosReference.child(imageUri.getLastPathSegment());
+//
+//                //upload file to firebase
+//                photoReference.putFile(imageUri).addOnSuccessListener(getActivity(), new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+//                        FriendlyMessage message = new FriendlyMessage(null, mUsername, mEmail,downloadUrl.toString(),null);
+//                        mFirebaseReference.push().setValue(message);
+//                    }
+//                });
             }
         }
     }
@@ -295,12 +315,20 @@ public class ChatFragment extends Fragment {
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     //for(DataSnapshot snapshot:dataSnapshot.getChildren()) {
                       if(dataSnapshot.child("rec_email").getValue().toString().equals(mAuth.getCurrentUser().getEmail().toString())||
-                              dataSnapshot.child("rec_email").getValue().toString().equals("gujarshlok@gmail.com")) {
+                              dataSnapshot.child("rec_email").getValue().toString().equals("gandhidisha0@gmail.com")||
+                              dataSnapshot.child("rec_email").getValue().toString().equals("gujarshlok@gmail.com")||
+                              dataSnapshot.child("rec_email").getValue().toString().equals("Nbaakhre@gmail.com")||
+                              dataSnapshot.child("rec_email").getValue().toString().equals("sanskruti23.jaipuria@gmail.com")||
+                              dataSnapshot.child("rec_email").getValue().toString().equals("arpanmodi2014@gmail.com")) {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
                       }
 //
-                      else if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com"))
+                      else if(mAuth.getCurrentUser().getEmail().equals("gujarshlok@gmail.com")
+                              ||mAuth.getCurrentUser().getEmail().equals("gandhidisha0@gmail.com")
+                              ||mAuth.getCurrentUser().getEmail().equals("Nbaakhre@gmail.com")
+                              ||mAuth.getCurrentUser().getEmail().equals("sanskruti23.jaipuria@gmail.com")
+                              ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com"))
                       {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
@@ -387,29 +415,7 @@ public class ChatFragment extends Fragment {
                     Toast.makeText(getActivity(),"Please Enter a message :)",Toast.LENGTH_LONG).show();
                 }
                 else{
-//                    mFirebaseReference.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                            //Log.e("gg","hello");
-//                            for (DataSnapshot ds:dataSnapshot.getChildren())
-//                            {
-//                                if(ds.child("name").getValue().toString().equals(name))
-//                                    if(ds.child("text").getValue().toString().equals(message))
-//                                {
-//                                    mailReceived=ds.child("email").getValue().toString();
-//                                    Log.d("mail",mailReceived);
-//                                    break;
-//                                }
-//                               // Log.d("HH", String.valueOf(ds));
-//                            }
-//
-//                        }
-//                        @Override
-//                        public void onCancelled(DatabaseError databaseError) {
-//
-//                        }
-//                    });
-                    FriendlyMessage message = new FriendlyMessage(committeemessage, mUsername, mEmail,null,email);
+                    FriendlyMessage message = new FriendlyMessage(committeemessage, mUsername, mEmail,null,email,ts,name);
                     mFirebaseReference.push().setValue(message);
                     Log.e("error","hi");
                     Toast.makeText(getActivity(),"Message Sent!",Toast.LENGTH_SHORT).show();

@@ -6,7 +6,6 @@ package sp.udaan.HelperClasses;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +33,8 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         ImageView photoImageView = (ImageView) convertView.findViewById(R.id.photoImageView);
         TextView messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
         TextView authorTextView = (TextView) convertView.findViewById(R.id.nameTextView);
+        TextView nametoTextView=(TextView)convertView.findViewById(R.id.nametoTextView);
+        TextView to =(TextView)convertView.findViewById(R.id.to);
         TextView emailTextView=(TextView)convertView.findViewById(R.id.emailTextView);
         CardView x = (CardView) convertView.findViewById(R.id.msgCard);
 
@@ -42,9 +43,7 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         String w = message.getEmail();
         String z = message.getRec_email();
 
-        if(!w.equals(z)){
-            x.setCardBackgroundColor(Color.CYAN);
-        }
+        x.setBackgroundResource(R.drawable.left_buton);
 
         boolean isPhoto = message.getPhotoUrl() != null;
         if (isPhoto) {
@@ -60,9 +59,13 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
             emailTextView.setVisibility(View.GONE);
             messageTextView.setText(message.getText());
         }
+        to.setText("to");
         authorTextView.setText(message.getName());
         emailTextView.setText(message.getEmail());
-
+        nametoTextView.setText(message.getNamereceiver());
+        if(!w.equals(z)){
+            x.setBackgroundResource(R.drawable.right_buton);
+        }
 
 
         return convertView;
