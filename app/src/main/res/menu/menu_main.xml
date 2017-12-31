@@ -27,10 +27,10 @@
         android:title=""/>
 
 
-    <item
-        android:id="@+id/menu_follow_snapchat"
-        android:icon="@drawable/svg_logo_snapchat"
-        app:showAsAction="always"
-        android:title=""/>
+    <!--<item-->
+        <!--android:id="@+id/menu_follow_snapchat"-->
+        <!--android:icon="@drawable/svg_logo_snapchat"-->
+        <!--app:showAsAction="always"-->
+        <!--android:title=""/>-->
 
 </menu>
