@@ -289,7 +289,7 @@ public class QuizFragment extends Fragment {
                             mResponseReference.child(quizID).push().setValue(new QuizResponse(user_name, user_email, String.valueOf(score), ServerValue.TIMESTAMP));
 
                         } catch (Exception e) {
-                            Toast.makeText(getActivity(), "Error Occured", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Error Occured! Check Internet Connection!", Toast.LENGTH_SHORT).show();
                         }
                     }else {
                         Toast.makeText(getActivity(),"Please select an option for each Question",Toast.LENGTH_SHORT).show();

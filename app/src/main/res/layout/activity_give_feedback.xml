@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sp.udaan.Activites.GiveFeedback"
-    android:orientation="vertical">
+    tools:context="sp.udaan.Activites.GiveFeedback">
 
     <TextView
         android:layout_marginTop="36dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/feedback_TextVIEW"
         android:text="Event Feedback"
         android:textSize="24dp"
         android:textColor="@color/colorPrimary"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_centerHorizontal="true"/>
 
     <com.hsalf.smilerating.SmileRating
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/feedback_TextVIEW"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rating_smilebar"/>
 
     <EditText
         android:layout_width="400dp"
+        android:layout_below="@id/rating_smilebar"
         android:layout_height="wrap_content"
         android:hint="Feedback"
-        android:layout_marginTop="20dp"
+        android:maxLines="3"
         android:id="@+id/feedback"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Go On"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="20dp"
+        android:textColor="@color/card_background"
+        android:background="@color/authui_colorAccent"
+        android:layout_alignParentBottom="true"
         android:id="@+id/rateConfirm"/>
 
-</LinearLayout>
+</RelativeLayout>
 

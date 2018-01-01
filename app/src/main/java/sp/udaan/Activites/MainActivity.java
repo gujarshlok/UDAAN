@@ -562,9 +562,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_follow_instagram:
                 uri = Uri.parse(getResources().getString(R.string.udaan_insta_link));
                 break;
-            case R.id.menu_follow_snapchat:
+            /*case R.id.menu_follow_snapchat:
                 uri = Uri.parse(getResources().getString(R.string.udaan_snap_link));
                 break;
+            */
             //case R.id.menu_sign_out:
 
         }
