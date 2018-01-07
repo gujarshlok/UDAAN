@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     if (shouldMap.getString("LoginDone","0").equals("1") && valid==0 ){
-                        Intent mapsActivity = new Intent(MainActivity.this, MapsActivity.class);
+                        Intent mapsActivity = new Intent(MainActivity.this, MapImageActivity.class);
                         startActivity(mapsActivity);
                         valid=1;
                     }
@@ -367,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
                                     break;
 
                                 case R.id.view_events:
-                                    Intent j = new Intent(MainActivity.this,MapsActivity.class);
+                                    Intent j = new Intent(MainActivity.this,MapImageActivity.class);
                                     startActivity(j);
                                     break;
 

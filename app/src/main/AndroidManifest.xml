@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_CALENDAR" />
 
     <application
@@ -20,29 +19,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activites.MainActivity"
+        <activity
+            android:name=".Activites.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Activites.AddEvent"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.AddEvent2"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.EventDetails"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.EditEvent"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.GiveFeedback"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.SignInVideo"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.RegConfirm"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activites.AddEvent"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.AddEvent2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.EventDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.EditEvent"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.GiveFeedback"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.SignInVideo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.RegConfirm"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -58,12 +64,16 @@
         <activity
             android:name=".Activites.MapsActivity"
             android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.MyRegistrations"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activites.LoginPage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activites.MapImageActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.MyRegistrations"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activites.LoginPage"
-            android:screenOrientation="portrait">
-        </activity>
     </application>
 
 </manifest>
