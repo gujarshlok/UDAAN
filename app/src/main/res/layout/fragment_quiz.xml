@@ -310,11 +310,12 @@
         </android.support.v7.widget.CardView>
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="SUBMIT"
                 android:textSize="16dp"
-                android:background="@color/authui_colorAccent"
+                android:background="@drawable/rounded_button"
                 android:layout_marginBottom="24dp"
                 android:textColor="#fff"
                 android:id="@+id/quizfragment_submitbutton"/>

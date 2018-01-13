@@ -251,7 +251,7 @@ public class EventDetails
             case R.id.action_share:
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, "Check out the event '"+event_name+"' at Matrix 17! For more details, download the official app here:\n"+getResources().getString(R.string.playstore_link));
+                intent.putExtra(Intent.EXTRA_TEXT, "Check out the event '"+event_name+"' at Udann 18! For more details, download the official app here:\n"+getResources().getString(R.string.playstore_link));
                 intent.setType("text/plain");
                 startActivity(Intent.createChooser(intent, "Share event via"));
                 break;
@@ -389,8 +389,8 @@ public class EventDetails
                 final Calendar beginTime = Calendar.getInstance();
                 final Calendar endTime = Calendar.getInstance();
 
-                beginTime.set(2017, 8, 15, 9, 0);
-                endTime.set(2017, 8, 15, 18, 0);
+                beginTime.set(2018, 2, 15, 9, 0);
+                endTime.set(2018, 2, 15, 22, 0);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Remind on?");
@@ -400,7 +400,7 @@ public class EventDetails
                 else if(Objects.equals(event_name,"Sky Observation"))
                     day=new CharSequence[]{"Day 2"};
                 else
-                    day=new CharSequence[]{"Day 1","Day 2"};
+                    day=new CharSequence[]{"Day 1","Day 2","Day 3"};
                 builder.setItems(day, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -409,9 +409,8 @@ public class EventDetails
                         }
                         else
                         {
-                            beginTime.set(2017, 8, 16, 9, 0);
-                            endTime.set(2017, 8, 16, 18, 0);
-
+                            beginTime.set(2018, 2, 17, 9, 0);
+                            endTime.set(2018, 2, 17, 22, 0);
                             goToCalendar(beginTime, endTime);
                         }
                     }
@@ -430,7 +429,7 @@ public class EventDetails
                 .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
                 .putExtra(CalendarContract.Events._ID, mEventID)
                 .putExtra(CalendarContract.Events.TITLE, event_name)
-                .putExtra(CalendarContract.Events.DESCRIPTION, "Event at Matrix 17")
+                .putExtra(CalendarContract.Events.DESCRIPTION, "Event at Udaan 18")
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, getIntent().getStringExtra("venue")+", S.P.I.T.")
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
 

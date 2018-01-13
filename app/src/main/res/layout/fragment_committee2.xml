@@ -44,6 +44,26 @@
         </com.robertlevonyan.views.expandable.Expandable>
 
         <com.robertlevonyan.views.expandable.Expandable
+            android:id="@+id/expandable3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:exp_headerBackgroundColor="@color/colorPrimary"
+            >
+
+            <include
+                android:id="@+id/header3"
+                layout="@layout/header_view3"
+                />
+
+            <include
+                android:id="@+id/content3"
+                layout="@layout/content_view3"
+                />
+        </com.robertlevonyan.views.expandable.Expandable>
+
+
+        <com.robertlevonyan.views.expandable.Expandable
             android:id="@+id/expandable2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,24 +79,6 @@
                 layout="@layout/content_view2" />
         </com.robertlevonyan.views.expandable.Expandable>
 
-        <com.robertlevonyan.views.expandable.Expandable
-            android:id="@+id/expandable3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:exp_headerBackgroundColor="@color/colorPrimary"
-            >
-
-            <include
-                android:id="@+id/header3"
-                layout="@layout/header_view3"
-               />
-
-            <include
-                android:id="@+id/content3"
-                layout="@layout/content_view3"
-                />
-        </com.robertlevonyan.views.expandable.Expandable>
 
         <com.robertlevonyan.views.expandable.Expandable
             android:id="@+id/expandable4"

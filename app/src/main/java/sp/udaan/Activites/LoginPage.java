@@ -65,12 +65,11 @@ public class LoginPage extends AppCompatActivity {
         admin = new ArrayList();
         //admin.add("aditya.bhave41@gmail.com");
         admin.add("gujarshlok@gmail.com");
-        admin.add("sushmenkc179@gmail.com");
+        admin.add("Nbaakhre@gmail.com");
         admin.add("riya.bakhtiani@gmail.com");
-        admin.add("ashnehete@gmail.com");
-        admin.add("aditya.bhave41@gmail.com");
-        admin.add("jainamsoni33@gmail.com");
-        admin.add("pardeshi.vishwa25@gmail.com");
+        admin.add("sanskruti23.jaipuria@gmail.com");
+        admin.add("arpanmodi2014@gmail.com");
+        admin.add("gandhidisha0@gmail.com");
 
         // and so on
 
@@ -79,15 +78,15 @@ public class LoginPage extends AppCompatActivity {
         eventOrg = new ArrayList();
         //eventOrg.add("aditya.bhave41@gmail.com");
         eventOrg.add("gujarshlok@gmail.com");
-        eventOrg.add("madhugore1@gmail.com");
-        eventOrg.add("tejas4888@gmail.com");
-        eventOrg.add("lineseguidor@gmail.com");
-        eventOrg.add("spitlanmafia.2017@gmail.com");
-        eventOrg.add("matrixvsm17@gmail.com");
-        eventOrg.add("iplauction2k17@gmail.com");
-        eventOrg.add("paperpresentation.matrix17@gmail.com");
-        eventOrg.add("chaotichouse2k17@gmail.com");
-        eventOrg.add("lasertag1718@gmail.com");
+        eventOrg.add("fifauction2k18@gmail.com");
+        eventOrg.add("humanfoosball.udaan2018@gmail.com");
+        eventOrg.add("aelanejang2018@gmail.com");
+        eventOrg.add("carnival2k18@gmail.com");
+        eventOrg.add("vounkaroake2018@gmail.com");
+        eventOrg.add("sptale2018@gmail.com");
+        eventOrg.add("rythmicbingo@gmail.com");
+        eventOrg.add("mrmsudaan2k18@gmail.com");
+
         eventOrg.add("spitmatrixlangaming@gmail.com");
         eventOrg.add("codatron.matrix17@gmail.com");
         eventOrg.add("mindthatword@gmail.com");

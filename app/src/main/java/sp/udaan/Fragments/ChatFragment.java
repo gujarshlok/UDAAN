@@ -151,11 +151,12 @@ public class ChatFragment extends Fragment {
                 ||mAuth.getCurrentUser().getEmail().equals("gandhidisha0@gmail.com")
                 ||mAuth.getCurrentUser().getEmail().equals("Nbaakhre@gmail.com")
                 ||mAuth.getCurrentUser().getEmail().equals("sanskruti23.jaipuria@gmail.com")
-                ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")) {
+                ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")
+                ||mAuth.getCurrentUser().getEmail().equals("riya.bakhtiani@gmail.com")) {
 
-            mMessageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
+            mMessageListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                     TextView nameView = (TextView) view.findViewById(R.id.nameTextView);
                     TextView messageView=(TextView)view.findViewById(R.id.messageTextView);
                     TextView emailView=(TextView)view.findViewById(R.id.emailTextView);
@@ -167,8 +168,8 @@ public class ChatFragment extends Fragment {
                     Log.d("name",name);
                     Log.d("message",message);
 
-
                     showpopup(email,name);
+                    return false;
                 }
             });
         }
@@ -201,7 +202,8 @@ public class ChatFragment extends Fragment {
                         ||mAuth.getCurrentUser().getEmail().equals("gandhidisha0@gmail.com")
                         ||mAuth.getCurrentUser().getEmail().equals("Nbaakhre@gmail.com")
                         ||mAuth.getCurrentUser().getEmail().equals("sanskruti23.jaipuria@gmail.com")
-                        ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")) {
+                        ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")
+                        ||mAuth.getCurrentUser().getEmail().equals("riya.bakhtiani@gmail.com")) {
 
                     FriendlyMessage message = new
                             FriendlyMessage(mMessageEditText.getText().toString(), mUsername, mEmail, null, mEmail, ts, "Users");
@@ -319,7 +321,9 @@ public class ChatFragment extends Fragment {
                               dataSnapshot.child("rec_email").getValue().toString().equals("gujarshlok@gmail.com")||
                               dataSnapshot.child("rec_email").getValue().toString().equals("Nbaakhre@gmail.com")||
                               dataSnapshot.child("rec_email").getValue().toString().equals("sanskruti23.jaipuria@gmail.com")||
-                              dataSnapshot.child("rec_email").getValue().toString().equals("arpanmodi2014@gmail.com")) {
+                              dataSnapshot.child("rec_email").getValue().toString().equals("arpanmodi2014@gmail.com")||
+                              dataSnapshot.child("rec_email").getValue().toString().equals("riya.bakhtiani@gmail.com")
+                    ) {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);
                       }
@@ -328,7 +332,8 @@ public class ChatFragment extends Fragment {
                               ||mAuth.getCurrentUser().getEmail().equals("gandhidisha0@gmail.com")
                               ||mAuth.getCurrentUser().getEmail().equals("Nbaakhre@gmail.com")
                               ||mAuth.getCurrentUser().getEmail().equals("sanskruti23.jaipuria@gmail.com")
-                              ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com"))
+                              ||mAuth.getCurrentUser().getEmail().equals("arpanmodi2014@gmail.com")
+                              ||mAuth.getCurrentUser().getEmail().equals("riya.bakhtiani@gmail.com"))
                       {
                           FriendlyMessage friendlyMessage = dataSnapshot.getValue(FriendlyMessage.class);
                           mMessageAdapter.add(friendlyMessage);

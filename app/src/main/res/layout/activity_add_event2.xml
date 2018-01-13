@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="sp.udaan.Activites.AddEvent2"
+    android:background="#fff"
     android:orientation="vertical">
 
     <ScrollView
@@ -19,13 +20,13 @@
             android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 app:errorEnabled="true"
                 android:id="@+id/addevent2_timing_TextInputLayout"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/event2_timings"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="Timings" />
@@ -46,26 +47,26 @@
 
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 app:errorEnabled="true"
                 android:id="@+id/addevent2_organizer1name_TextInputLayout"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/event2_name1"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="Organizer1 Name" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 app:errorEnabled="true"
                 android:id="@+id/addevent2_organizer1contact_TextInputLayout"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/event2_num1"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="Organizer1 Contact"
@@ -73,26 +74,26 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 app:errorEnabled="true"
                 android:id="@+id/addevent2_organizer2name_TextInputLayout"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/event2_name2"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="Organizer2 Name" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 app:errorEnabled="true"
                 android:id="@+id/addevent2_organizer2contact_TextInputLayout"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/event2_num2"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="Organizer2 Contact"
@@ -113,13 +114,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 app:errorEnabled="true"
                 android:id="@+id/addevent2_fee_TextInputLayout"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/event2_fee"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="RegistrationSchemes" />
@@ -130,6 +131,8 @@
                 android:layout_height="wrap_content"
                 android:text="Add Event"
                 android:onClick="addEvent2"
+                android:textColor="#fff"
+                android:background="@drawable/rounded_button"
                 />
 
         </LinearLayout>
