@@ -389,8 +389,8 @@ public class EventDetails
                 final Calendar beginTime = Calendar.getInstance();
                 final Calendar endTime = Calendar.getInstance();
 
-                beginTime.set(2018, 2, 15, 9, 0);
-                endTime.set(2018, 2, 15, 22, 0);
+                beginTime.set(2018, 2, 16, 9, 0);
+                endTime.set(2018, 2, 16, 22, 0);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Remind on?");
@@ -409,8 +409,8 @@ public class EventDetails
                         }
                         else
                         {
-                            beginTime.set(2018, 2, 17, 9, 0);
-                            endTime.set(2018, 2, 17, 22, 0);
+                            beginTime.set(2018, 2, 18, 9, 0);
+                            endTime.set(2018, 2, 18, 22, 0);
                             goToCalendar(beginTime, endTime);
                         }
                     }
