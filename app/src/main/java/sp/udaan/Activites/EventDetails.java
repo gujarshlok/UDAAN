@@ -248,13 +248,7 @@ public class EventDetails
             case R.id.action_set_reminder:
                 setReminder();
                 break;
-            case R.id.action_share:
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, "Check out the event '"+event_name+"' at Udann 18! For more details, download the official app here:\n"+getResources().getString(R.string.playstore_link));
-                intent.setType("text/plain");
-                startActivity(Intent.createChooser(intent, "Share event via"));
-                break;
+
             case android.R.id.home:
                 onBackPressed();
                 return true;
@@ -395,11 +389,7 @@ public class EventDetails
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Remind on?");
                 CharSequence day[];
-                if(Objects.equals(event_name, "Daniel Fernandes")||Objects.equals(event_name,"Techshiksha"))
-                    day=new CharSequence[]{"Day 1"};
-                else if(Objects.equals(event_name,"Sky Observation"))
-                    day=new CharSequence[]{"Day 2"};
-                else
+
                     day=new CharSequence[]{"Day 1","Day 2","Day 3"};
                 builder.setItems(day, new DialogInterface.OnClickListener() {
                     @Override
