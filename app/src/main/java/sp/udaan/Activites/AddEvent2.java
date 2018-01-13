@@ -1,5 +1,6 @@
 package sp.udaan.Activites;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,6 +27,7 @@ public class AddEvent2 extends AppCompatActivity {
     TextInputLayout timelayout,venuelayout,emaillayout,name1layout,contact1layout,name2layout,contact2layout,prizelayout,feelayout;
     SharedPreferences userInfo;
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,13 +104,23 @@ public class AddEvent2 extends AppCompatActivity {
         } else if (TextUtils.isEmpty(num1)){
             contact1layout.setError(getString(R.string.notemptyfield));
             return;
-        } else if (TextUtils.isEmpty(name2)){
+        }
+        else if(num1.length()!=10)
+        {
+            contact1layout.setError("Enter a valid Contact Number");
+            return;
+        }else if (TextUtils.isEmpty(name2)){
             name2layout.setError(getString(R.string.notemptyfield));
             return;
         } else if (TextUtils.isEmpty(num2)){
             contact2layout.setError(getString(R.string.notemptyfield));
             return;
-        } else if(TextUtils.isEmpty(prize)){
+        } else if(num2.length()!=10)
+        {
+            contact2layout.setError("Enter a valid Contact Number");
+            return;
+        }
+        else if(TextUtils.isEmpty(prize)){
             prizelayout.setError(getString(R.string.notemptyfield));
             return;
         } else if (TextUtils.isEmpty(fee)){
