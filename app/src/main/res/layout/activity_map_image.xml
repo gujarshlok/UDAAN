@@ -13,26 +13,28 @@
 
     <ImageView
         android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:id="@+id/mapimage_1"
         android:src="@drawable/topmost"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:id="@+id/mapimage_2"
         android:layout_height="150dp"
         android:src="@drawable/middletop"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:id="@+id/mapimage_3"
         android:layout_height="150dp"
         android:src="@drawable/middlebottom"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:id="@+id/mapimage_4"
-        android:layout_height="150dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/bottommost"/>
+
+        <ImageView
+            android:id="@+id/mapimage_4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="90dp"
+            android:src="@drawable/bottommost" />
 
 
 </LinearLayout>
