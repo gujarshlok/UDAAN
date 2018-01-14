@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.AppBarLayout;
@@ -42,7 +41,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import me.relex.circleindicator.CircleIndicator;
 import sp.udaan.Fragments.AboutAppFragment;
 import sp.udaan.Fragments.ChatFragment;
 import sp.udaan.Fragments.CommitteeFragment;
@@ -501,7 +499,7 @@ public class MainActivity extends AppCompatActivity {
                                                 fragmentTransaction.addToBackStack(backStageName).commit();
                                             }
                                             appBarLayout.setExpanded(true, true);
-                                            collapsingToolbarLayout.setTitle("Matrix 17");
+                                            collapsingToolbarLayout.setTitle("UDAAN");
                                         }
                                     }, DRAWER_DELAY);
                                     AuthUI.getInstance()
