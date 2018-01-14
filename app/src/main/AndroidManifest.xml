@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activites.MainActivity"
+            android:name=".Activites.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,10 +70,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activites.LoginPage"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activites.MapImageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".Activites.MainActivity"
             android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
