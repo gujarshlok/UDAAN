@@ -77,27 +77,23 @@ public class LoginPage extends AppCompatActivity {
 
         eventOrg = new ArrayList();
         //eventOrg.add("aditya.bhave41@gmail.com");
-        eventOrg.add("gujarshlok@gmail.com");
-        eventOrg.add("fifauction2k18@gmail.com");
-        eventOrg.add("humanfoosball.udaan2018@gmail.com");
-        eventOrg.add("aelanejang2018@gmail.com");
-        eventOrg.add("carnival2k18@gmail.com");
-        eventOrg.add("vounkaroake2018@gmail.com");
-        eventOrg.add("sptale2018@gmail.com");
-        eventOrg.add("rythmicbingo@gmail.com");
-        eventOrg.add("mrmsudaan2k18@gmail.com");
-        eventOrg.add("langaming2018@gmail.com");
-        eventOrg.add("spit.warofbranches@gmail.com");
-        
-        eventOrg.add("mindthatword@gmail.com");
-        eventOrg.add("matrix2k17.zk@gmail.com");
-        eventOrg.add("humanfoosball2017@gmail.com");
-        eventOrg.add("robowars.matrix@gmail.com");
-        eventOrg.add("robosoccermatrix2k17@gmail.com");
-        eventOrg.add("spit.iete@gmail.com");
-        eventOrg.add("zorbing.matrix17@gmail.com");
-        eventOrg.add("spit.csi@gmail.com");
-        eventOrg.add("projectexhibition.matrix2k17@gmail.com");
+        eventOrg.add("gujargujar0@gmail.com");
+        eventOrg.add("fifauction2k18@gmail.com");//
+        eventOrg.add("humanfoosball.udaan2018@gmail.com");//
+        eventOrg.add("aelanejang2018@gmail.com");//
+        eventOrg.add("carnival2k18@gmail.com");//
+        eventOrg.add("vounkaroake2018@gmail.com");//
+        eventOrg.add("rythmicbingo@gmail.com");//
+        eventOrg.add("mrmsudaan2k18@gmail.com");//
+        eventOrg.add("langaming2018@gmail.com");//
+        eventOrg.add("spit.warofbranches@gmail.com");//
+        eventOrg.add("karokeudaan@gmail.com");//
+        eventOrg.add("spitmun@gmail.com");//
+        eventOrg.add("spitdebsoc18@gmail.com");//
+        eventOrg.add("quizfandom@gmail.com");//
+        eventOrg.add("sptale2018@gmail.com");//
+        eventOrg.add("streetdance2k18@gmail.com");//
+        eventOrg.add("hogathon18@gmail.com");//
 
         // and so on
         //prjct exhibition, tech quz
