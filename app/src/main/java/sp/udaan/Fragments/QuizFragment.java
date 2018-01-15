@@ -1,16 +1,18 @@
 package sp.udaan.Fragments;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -40,6 +42,7 @@ public class QuizFragment extends Fragment {
     RadioButton option21,option22,option23,option24;
     RadioButton option31,option32,option33,option34;
     Button submitbutton;
+    ImageButton leaderboardbutton;
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mItemDatabaseReference;
@@ -58,6 +61,7 @@ public class QuizFragment extends Fragment {
     }
 
 
+    @SuppressLint("WrongConstant")
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
@@ -146,6 +150,7 @@ public class QuizFragment extends Fragment {
         questiontext2=(TextView)view.findViewById(R.id.quizfragment_questiontext2);
         questiontext3=(TextView)view.findViewById(R.id.quizfragment_questiontext3);
 
+        leaderboardbutton=(ImageButton)view.findViewById(R.id.leaderboardbutton);
         previousscoretext=(TextView)view.findViewById(R.id.quizfragment_previousscore);
 
         radioGroup=(RadioGroup)view.findViewById(R.id.quizfragment_optiongroup);
@@ -166,6 +171,17 @@ public class QuizFragment extends Fragment {
         option33=(RadioButton)view.findViewById(R.id.quizfragment_radiooption33);
         option34=(RadioButton)view.findViewById(R.id.quizfragment_radiooption34);
 
+        leaderboardbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                LeaderboardFragment leaderboardfragment = new LeaderboardFragment();
+                fragmentTransaction.replace(R.id.fragment_container, leaderboardfragment);
+                fragmentTransaction.commit();
+
+            }
+        });
         submitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
