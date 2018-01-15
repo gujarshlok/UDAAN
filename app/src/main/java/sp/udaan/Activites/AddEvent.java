@@ -74,7 +74,7 @@ public class AddEvent extends AppCompatActivity {
         mFirebaseStorage = FirebaseStorage.getInstance();
         mStorageReference = mFirebaseStorage.getReference().child("EventPosters");
 
-        final String eventTypes[]={"Literary Arts","Performing Arts","Fun Events","Featured Events"};
+        final String eventTypes[]={"Literary Arts","Performing Arts","Fun Events"};
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,eventTypes);
         ecategoryspinner.setAdapter(adapter);
 
