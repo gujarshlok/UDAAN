@@ -226,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
                                     .setTheme(R.style.LoginTheme).setLogo(R.mipmap.ic_launcher)
                                     .build(),
                             RC_SIGN_IN);
+                    valid=0;
                 }
             }
         };
