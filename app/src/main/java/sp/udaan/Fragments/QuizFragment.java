@@ -3,6 +3,7 @@ package sp.udaan.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
+import sp.udaan.Activites.LeaderboardActivity;
 import sp.udaan.HelperClasses.QuizResponse;
 import sp.udaan.R;
 
@@ -174,11 +176,14 @@ public class QuizFragment extends Fragment {
         leaderboardbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager = getFragmentManager();
+                /*FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 LeaderboardFragment leaderboardfragment = new LeaderboardFragment();
                 fragmentTransaction.replace(R.id.fragment_container, leaderboardfragment);
-                fragmentTransaction.commit();
+                fragmentTransaction.commit();*/
+                Intent i =new Intent(getActivity(), LeaderboardActivity.class);
+                i.putExtra("QuizID",quizID);
+                startActivity(i);
 
             }
         });

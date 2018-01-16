@@ -74,10 +74,11 @@
         <activity
             android:name=".Activites.MapImageActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".Activites.MainActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".Activites.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activites.LeaderboardActivity"
+            android:parentActivityName=".Activites.MainActivity"></activity>
     </application>
 
 </manifest>
