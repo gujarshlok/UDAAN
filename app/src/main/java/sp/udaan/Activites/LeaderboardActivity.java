@@ -31,6 +31,7 @@ public class LeaderboardActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference quizReference;
     RecyclerView recyclerView;
+    String QuizID2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +41,12 @@ public class LeaderboardActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        String QuizID=getIntent().getStringExtra("QuizID");
+        //final String QuizID=getIntent().getStringExtra("QuizID");
 
-        Toast.makeText(this,QuizID,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,QuizID,Toast.LENGTH_SHORT).show();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        quizReference = firebaseDatabase.getReference().child("Quiz").child("Responses").child(QuizID);
+        quizReference = firebaseDatabase.getReference().child("Quiz");
 
         final ArrayList<LeaderboardUser> leaderboardUsers=new ArrayList<>();
         final Context context=this;
@@ -60,11 +61,14 @@ public class LeaderboardActivity extends AppCompatActivity {
         quizReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                QuizID2=String.valueOf(dataSnapshot.child("quizid").getValue());
+
+                DataSnapshot d=dataSnapshot.child("Responses").child(QuizID2);
                 int position=1;
-                for (DataSnapshot d: dataSnapshot.getChildren())
+                for (DataSnapshot ds:d.getChildren())
                 {
-                    String name=String.valueOf(d.child("name").getValue());
-                    String score = String.valueOf(d.child("score").getValue());
+                    String name=String.valueOf(ds.child("name").getValue());
+                    String score = String.valueOf(ds.child("score").getValue());
                     leaderboardUsers.add(new LeaderboardUser(String.valueOf(position),name,"t",score));
                     position++;
                     leaderboardUsers.sort(new Comparator<LeaderboardUser>() {
@@ -82,5 +86,6 @@ public class LeaderboardActivity extends AppCompatActivity {
 
             }
         });
+        
     }
 }

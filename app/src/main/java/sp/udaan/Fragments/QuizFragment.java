@@ -176,13 +176,7 @@ public class QuizFragment extends Fragment {
         leaderboardbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                LeaderboardFragment leaderboardfragment = new LeaderboardFragment();
-                fragmentTransaction.replace(R.id.fragment_container, leaderboardfragment);
-                fragmentTransaction.commit();*/
                 Intent i =new Intent(getActivity(), LeaderboardActivity.class);
-                i.putExtra("QuizID",quizID);
                 startActivity(i);
 
             }
