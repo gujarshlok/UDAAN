@@ -61,7 +61,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 R.layout.welcome_slide3
         };
 
-        addBottomDots(0);
+      //  addBottomDots(0);
 
         // making notification bar transparent
         changeStatusBarColor();
@@ -126,7 +126,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
-            addBottomDots(position);
+           // addBottomDots(position);
 
             // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {

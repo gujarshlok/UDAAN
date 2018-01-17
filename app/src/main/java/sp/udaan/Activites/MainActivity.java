@@ -160,14 +160,14 @@ public class MainActivity extends AppCompatActivity {
         try{
             if (currentCategory.equals("Literary Arts"))
             {
-                crescent_kenburns.setImageResource(R.drawable.queens_necklace);
+                crescent_kenburns.setImageResource(R.drawable.sanjay_gandhi);
             }else if (currentCategory.equals("Performing Arts"))
             {
                 crescent_kenburns.setImageResource(R.drawable.versova_beach);
             }else if (currentCategory.equals("Fun Events")){
-                crescent_kenburns.setImageResource(R.drawable.sanjay_gandhi);
-            }else {
                 crescent_kenburns.setImageResource(R.drawable.carter_road);
+            }else {
+                crescent_kenburns.setImageResource(R.drawable.queens_necklace);
             }
         }catch ( Exception e)
         {

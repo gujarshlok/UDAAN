@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <LinearLayout android:layout_width="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingBottom="16dp"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#393185">
 
 
     <ImageView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="130dp"
         android:id="@+id/mapimage_1"
         android:src="@drawable/topmost"/>
-    <ImageView
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="#3E3E8F">
+        <ImageView
+            android:id="@+id/mapimage_2"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="57dp"
+            android:src="@drawable/middletop" />
+</LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/mapimage_2"
-        android:layout_height="150dp"
-        android:src="@drawable/middletop"/>
-    <ImageView
+        android:layout_height="130dp"
+        android:background="#415DA6">
+        <ImageView
+            android:id="@+id/mapimage_3"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/middlebottom" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/mapimage_3"
-        android:layout_height="150dp"
-        android:src="@drawable/middlebottom"/>
+        android:layout_height="200dp"
+        android:background="#5974B7">
 
         <ImageView
             android:id="@+id/mapimage_4"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="90dp"
-            android:src="@drawable/bottommost" />
-
+            android:layout_height="130dp"
+            android:layout_marginRight="75dp"
+            android:src="@drawable/bottom" />
+    </LinearLayout>
 
 </LinearLayout>
-</ScrollView>

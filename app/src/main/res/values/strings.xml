@@ -134,7 +134,7 @@
 
     <string name="app_description">An open source application for the annual cultural festival of Sardar Patel Institute of Technology.</string>
     <string name="app_licence">Licensed under the MIT license</string>
-    <string name="app_copyright">&#169; 2017 Sardar Patel Institute of Technology</string>
+    <string name="app_copyright">&#169; 2018 Sardar Patel Institute of Technology</string>
     <string name="aboutapp">About</string>
     <string name="date">15th and 16th Sep 2017</string>
     <string name="title_activity_edit_event">EditEvent</string>
