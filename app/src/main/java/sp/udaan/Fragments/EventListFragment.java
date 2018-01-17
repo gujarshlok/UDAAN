@@ -52,6 +52,7 @@ public class EventListFragment extends Fragment{
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mItemDatabaseReference;
+    private DatabaseReference featuredEventReference;
     private ValueEventListener mValueEventListener;
 
     private EventListAdapter evl;
@@ -82,6 +83,7 @@ public class EventListFragment extends Fragment{
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mItemDatabaseReference = mFirebaseDatabase.getReference().child("Events").child(category);
+        featuredEventReference = mFirebaseDatabase.getReference().child("Events");
         mEvents = new ArrayList<Event>();
     }
 
@@ -169,8 +171,19 @@ public class EventListFragment extends Fragment{
         );
 
 
-        EventListFragment.FetchEventList fel = new EventListFragment.FetchEventList();
-        fel.execute();
+        if (category.equals("Featured"))
+        {
+            //NOTE : Dont delete below code !!!!!
+
+            //EventListFragment.FetchFeaturedEventList fel = new EventListFragment.FetchFeaturedEventList();
+            EventListFragment.FetchEventList fel = new EventListFragment.FetchEventList();
+            fel.execute();
+        }else
+        {
+            EventListFragment.FetchEventList fel = new EventListFragment.FetchEventList();
+            fel.execute();
+        }
+
 
         return view;
     }
@@ -193,6 +206,50 @@ public class EventListFragment extends Fragment{
         mRecyclerView.scrollToPosition(0);
         pg.setVisibility(View.GONE);
     }
+
+
+    // NOTE : Dont delete FetchFeaturedEventList code !!!!!
+
+
+    /*public class FetchFeaturedEventList extends AsyncTask<Void,Void,ArrayList<Event>>{
+
+        @Override
+        protected ArrayList<Event> doInBackground(Void... voids) {
+            featuredEventReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    mEvents.clear();
+
+                    DataSnapshot snapshot =dataSnapshot.child("Fun Events").child("-L33iSYmdxIc-gWy9w54");
+                    String name = (String) snapshot.child("name").getValue();
+                    String description =  (String) snapshot.child("description").getValue();
+                    String posterUrl = (String) snapshot.child("posterUrl").getValue();
+                    String dates = (String) snapshot.child("dates").getValue();
+                    String time = (String) snapshot.child("time").getValue();
+                    String venue = (String) snapshot.child("venue").getValue();
+                    String orgMail = (String) snapshot.child("eventOrgMail").getValue();
+                    String pocName1 = (String) snapshot.child("pocName1").getValue();
+                    String pocName2 = (String) snapshot.child("pocName2").getValue();
+                    String pocNumber1 = (String) snapshot.child("pocNumber1").getValue();
+                    String pocNumber2 = (String) snapshot.child("pocNumber2").getValue();
+                    String prizeScheme = (String) snapshot.child("prizeScheme").getValue();
+                    String fees = (String) snapshot.child("feeScheme").getValue();
+
+                    mEvents.add(new Event(name,description,posterUrl,dates,time,venue,orgMail,pocName1,
+                            pocName2,pocNumber1,pocNumber2,prizeScheme,fees));
+                    updateUI();
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            return null;
+        }
+    }
+    */
+
 
     public class FetchEventList extends AsyncTask<Void,Void,ArrayList<Event>> {
 
