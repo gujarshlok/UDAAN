@@ -1,27 +1,27 @@
 package sp.udaan.Activites;
 
+import android.annotation.SuppressLint;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import sp.udaan.Fragments.QuizFragment;
 import sp.udaan.HelperClasses.LeaderboardAdapter;
 import sp.udaan.HelperClasses.LeaderboardUser;
 import sp.udaan.R;
@@ -32,6 +32,7 @@ public class LeaderboardActivity extends AppCompatActivity {
     DatabaseReference quizReference;
     RecyclerView recyclerView;
     String QuizID2;
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,7 @@ public class LeaderboardActivity extends AppCompatActivity {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(LeaderboardActivity.this);
         recyclerView.setLayoutManager(layoutManager);
+        final QuizFragment quizFragment= new QuizFragment();
 
         SharedPreferences userInfo;
         userInfo = context.getSharedPreferences("userInfo", Context.MODE_APPEND);
@@ -86,6 +88,8 @@ public class LeaderboardActivity extends AppCompatActivity {
 
             }
         });
+
+
         
     }
 }

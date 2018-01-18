@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
@@ -24,9 +23,9 @@ public class SetCrescentoImage extends PagerAdapter {
     private LayoutInflater mLayoutInflater;
 
     private int[] mResources = {
-            R.drawable.viewpager_1,
-            R.drawable.viewpager_22,
-            R.drawable.viewpager_33
+//            R.drawable.viewpager_1,
+//            R.drawable.viewpager_22,
+//            R.drawable.viewpager_33
     };
 
     public SetCrescentoImage(Context context) {

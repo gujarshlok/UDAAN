@@ -17,7 +17,7 @@ public class CommitteeFragment
         extends Fragment{
 
 
-    ImageView cp,vcp,tech,hoes,creative,admin,sec,hop,council;
+    ImageView cp,vcp,tech,hoes,creative,admin,sec,hop,council,la,literary;
 
     public CommitteeFragment(){}
 
@@ -41,16 +41,20 @@ public class CommitteeFragment
         sec = (ImageView)view.findViewById(R.id.msecurity);
         hop = (ImageView)view.findViewById(R.id.mhop);
         council = (ImageView) view.findViewById(R.id.council);
+        la=(ImageView)view.findViewById(R.id.mLA);
+        literary=(ImageView)view.findViewById(R.id.mliterary);
 
         Picasso.with(getContext()).load(R.drawable.mcp).into(cp);
-        Picasso.with(getContext()).load(R.drawable.matrixvcps).into(vcp);
-        Picasso.with(getContext()).load(R.drawable.mtech).into(tech);
-        Picasso.with(getContext()).load(R.drawable.mhoes).into(hoes);
-        Picasso.with(getContext()).load(R.drawable.mcreative).into(creative);
+        Picasso.with(getContext()).load(R.drawable.udaanvcps).into(vcp);
+        Picasso.with(getContext()).load(R.drawable.utech).into(tech);
+        Picasso.with(getContext()).load(R.drawable.pa).into(hoes);
+        Picasso.with(getContext()).load(R.drawable.udaanvcps).into(creative);
         Picasso.with(getContext()).load(R.drawable.madmin).into(admin);
-        Picasso.with(getContext()).load(R.drawable.msecurity).into(sec);
-        Picasso.with(getContext()).load(R.drawable.mhospitality).into(hop);
-        Picasso.with(getContext()).load(R.drawable.council).into(council);
+        Picasso.with(getContext()).load(R.drawable.usecurity).into(sec);
+        Picasso.with(getContext()).load(R.drawable.uhospitality).into(hop);
+        Picasso.with(getContext()).load(R.drawable.fa).into(la);
+        Picasso.with(getContext()).load(R.drawable.la).into(literary);
+        Picasso.with(getContext()).load(R.drawable.councilimage).into(council);
 
 
 

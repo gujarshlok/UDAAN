@@ -17,18 +17,19 @@
             android:id="@+id/myRegistrations_menuItem"
             android:icon="@drawable/svg_chat_white_48px"/>
 
+        <item android:title="Ask Queries"
+            android:id="@+id/chat"
+            android:icon="@drawable/ask2"/>
+
         <item
             android:title="Quiz"
             android:id="@+id/quiz_menuItem"
             android:icon="@drawable/quiz"/>
 
-        <item android:title="Ask Queries"
-            android:id="@+id/chat"
-            android:icon="@drawable/ask2"/>
         <item
-            android:title="@string/view_events"
+            android:title="Event Categories"
             android:id="@+id/view_events"
-            android:icon="@drawable/svg_alarm_add_white_48px"/>
+            android:icon="@drawable/eventicon"/>
 
         <item
             android:title="@string/sponsors"
@@ -68,7 +69,7 @@
         <item
             android:title="Sign Out"
             android:id="@+id/sign_out"
-            android:icon="@drawable/svg_group_work_white_48px"/>
+            android:icon="@drawable/signout"/>
 
     </group>
 

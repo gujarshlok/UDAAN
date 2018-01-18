@@ -5,7 +5,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HEADS PERFORMING ARTS"
+        android:text="HEAD LITERARY ARTS"
         android:textSize="24sp"
         android:textStyle="normal"
         android:layout_gravity="center_horizontal"

@@ -218,25 +218,25 @@ public class QuizFragment extends Fragment {
                             switch (Integer.parseInt(correct_answer1)) {
                                 case 1:
                                     if (option1.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 2:
                                     if (option2.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 3:
                                     if (option3.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 4:
                                     if (option4.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
@@ -246,25 +246,25 @@ public class QuizFragment extends Fragment {
                             switch (Integer.parseInt(correct_answer2)) {
                                 case 1:
                                     if (option21.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 2:
                                     if (option22.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 3:
                                     if (option23.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 4:
                                     if (option24.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
@@ -273,25 +273,25 @@ public class QuizFragment extends Fragment {
                             switch (Integer.parseInt(correct_answer3)) {
                                 case 1:
                                     if (option31.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 2:
                                     if (option32.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 3:
                                     if (option33.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 
                                 case 4:
                                     if (option34.isChecked()) {
-                                        score++;
+                                        score=score+10;
                                     }
                                     break;
 

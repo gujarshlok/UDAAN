@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 crescent_kenburns.setImageResource(R.drawable.versova_beach);
             }else if (currentCategory.equals("Fun Events")){
-                crescent_kenburns.setImageResource(R.drawable.carter_road);
+                crescent_kenburns.setImageResource(R.drawable.mumbaiscenic);
             }else {
                 crescent_kenburns.setImageResource(R.drawable.queens_necklace);
             }
