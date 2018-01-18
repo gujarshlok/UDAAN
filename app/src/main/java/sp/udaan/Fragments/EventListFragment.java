@@ -174,9 +174,7 @@ public class EventListFragment extends Fragment{
         if (category.equals("Featured"))
         {
             //NOTE : Dont delete below code !!!!!
-
-            //EventListFragment.FetchFeaturedEventList fel = new EventListFragment.FetchFeaturedEventList();
-            EventListFragment.FetchEventList fel = new EventListFragment.FetchEventList();
+            EventListFragment.FetchFeaturedEventList fel = new EventListFragment.FetchFeaturedEventList();
             fel.execute();
         }else
         {
@@ -211,7 +209,7 @@ public class EventListFragment extends Fragment{
     // NOTE : Dont delete FetchFeaturedEventList code !!!!!
 
 
-    /*public class FetchFeaturedEventList extends AsyncTask<Void,Void,ArrayList<Event>>{
+    public class FetchFeaturedEventList extends AsyncTask<Void,Void,ArrayList<Event>>{
 
         @Override
         protected ArrayList<Event> doInBackground(Void... voids) {
@@ -220,7 +218,7 @@ public class EventListFragment extends Fragment{
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     mEvents.clear();
 
-                    DataSnapshot snapshot =dataSnapshot.child("Fun Events").child("-L33iSYmdxIc-gWy9w54");
+                    DataSnapshot snapshot =dataSnapshot.child("Featured Events").child("tedevent");
                     String name = (String) snapshot.child("name").getValue();
                     String description =  (String) snapshot.child("description").getValue();
                     String posterUrl = (String) snapshot.child("posterUrl").getValue();
@@ -238,6 +236,45 @@ public class EventListFragment extends Fragment{
                     mEvents.add(new Event(name,description,posterUrl,dates,time,venue,orgMail,pocName1,
                             pocName2,pocNumber1,pocNumber2,prizeScheme,fees));
                     updateUI();
+
+                    snapshot = dataSnapshot.child("Featured Events").child("rubikevent");
+                    name = (String) snapshot.child("name").getValue();
+                    description =  (String) snapshot.child("description").getValue();
+                    posterUrl = (String) snapshot.child("posterUrl").getValue();
+                    dates = (String) snapshot.child("dates").getValue();
+                    time = (String) snapshot.child("time").getValue();
+                    venue = (String) snapshot.child("venue").getValue();
+                    orgMail = (String) snapshot.child("eventOrgMail").getValue();
+                    pocName1 = (String) snapshot.child("pocName1").getValue();
+                    pocName2 = (String) snapshot.child("pocName2").getValue();
+                    pocNumber1 = (String) snapshot.child("pocNumber1").getValue();
+                    pocNumber2 = (String) snapshot.child("pocNumber2").getValue();
+                    prizeScheme = (String) snapshot.child("prizeScheme").getValue();
+                    fees = (String) snapshot.child("feeScheme").getValue();
+
+                    mEvents.add(new Event(name,description,posterUrl,dates,time,venue,orgMail,pocName1,
+                            pocName2,pocNumber1,pocNumber2,prizeScheme,fees));
+                    updateUI();
+
+                    snapshot = dataSnapshot.child("Literary Arts").child("-L38w4gL59ECEC7ixsm9");
+                    name = (String) snapshot.child("name").getValue();
+                    description =  (String) snapshot.child("description").getValue();
+                    posterUrl = (String) snapshot.child("posterUrl").getValue();
+                    dates = (String) snapshot.child("dates").getValue();
+                    time = (String) snapshot.child("time").getValue();
+                    venue = (String) snapshot.child("venue").getValue();
+                    orgMail = (String) snapshot.child("eventOrgMail").getValue();
+                    pocName1 = (String) snapshot.child("pocName1").getValue();
+                    pocName2 = (String) snapshot.child("pocName2").getValue();
+                    pocNumber1 = (String) snapshot.child("pocNumber1").getValue();
+                    pocNumber2 = (String) snapshot.child("pocNumber2").getValue();
+                    prizeScheme = (String) snapshot.child("prizeScheme").getValue();
+                    fees = (String) snapshot.child("feeScheme").getValue();
+
+                    mEvents.add(new Event(name,description,posterUrl,dates,time,venue,orgMail,pocName1,
+                            pocName2,pocNumber1,pocNumber2,prizeScheme,fees));
+                    updateUI();
+
                 }
 
                 @Override
@@ -248,7 +285,7 @@ public class EventListFragment extends Fragment{
             return null;
         }
     }
-    */
+
 
 
     public class FetchEventList extends AsyncTask<Void,Void,ArrayList<Event>> {

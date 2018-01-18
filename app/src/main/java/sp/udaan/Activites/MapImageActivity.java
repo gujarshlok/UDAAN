@@ -25,7 +25,7 @@ public class MapImageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(MapImageActivity.this,MainActivity.class);
-                i.putExtra("EventCategory","Fun Events");
+                i.putExtra("EventCategory","Featured");
                 startActivity(i);
             }
         });
@@ -52,7 +52,7 @@ public class MapImageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(MapImageActivity.this,MainActivity.class);
-                i.putExtra("EventCategory","Featured");
+                i.putExtra("EventCategory","Fun Events");
                 startActivity(i);
             }
         });
