@@ -167,7 +167,7 @@ public class AddEvent extends AppCompatActivity {
 
         /*Hardcoded Poster*/
         if(url == null) {
-            url = "https://s-media-cache-ak0.pinimg.com/originals/8e/f5/9d/8ef59dc3c90a3abd56c87a5901709132.jpg";
+            url = "https://firebasestorage.googleapis.com/v0/b/udaan2k18.appspot.com/o/udaan2.png?alt=media&token=16af668d-fbdc-4bc8-9e8b-6a9c0cf7c3da";
         }
         //mDatabaseReference.push().setValue(new Event(name,desc,url,date,time,venue,orgMail,pocName1,pocName2,pocNumber1,pocNumber2,prizeScheme,feeScheme));
         //Toast.makeText(this,"Done!",Toast.LENGTH_SHORT);
