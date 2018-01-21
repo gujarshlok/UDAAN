@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "99056335123-vsq74bjfb6gustji35gkb3u2gkrik0us.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sp.udaan",
+            "certificate_hash": "0e861b3aef62f8144834f185d1d1c5245e17cf4b"
+          }
+        },
+        {
+          "client_id": "99056335123-9b76g95aekumma7g66tik8v7oqd0r9cq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sp.udaan",
+            "certificate_hash": "dd72e2a69d0a90fa11ed3018e41154592848d81b"
+          }
+        },
+        {
+          "client_id": "99056335123-0preqtd1p3pee9qhjqtk6njd9pjb7v8n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sp.udaan",
+            "certificate_hash": "9df023707dd7f49521f3eef6bf48a944d84e3c63"
+          }
+        },
+        {
           "client_id": "99056335123-h1jmmpni08reek4foelihmqaadiovd9j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -42,6 +66,13 @@
             {
               "client_id": "99056335123-6npdjs13hp0ap49rg3j8qe2jhrmb4f4a.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "99056335123-7te54r4bescgv2m9tkfbsi2g0lsr43si.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.parthtamane.Udaan-App"
+              }
             }
           ]
         },

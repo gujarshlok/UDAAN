@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                                     .createSignInIntentBuilder()
                                     .setIsSmartLockEnabled(false)
                                     .setProviders(AuthUI.GOOGLE_PROVIDER)
-                                    .setTheme(R.style.LoginTheme).setLogo(R.mipmap.ic_launcher)
+                                    .setTheme(R.style.LoginTheme)
                                     .build(),
                             RC_SIGN_IN);
                     valid=0;
