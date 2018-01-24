@@ -5,11 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
     String currentCategory;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -230,31 +233,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        //Carousel on top - commented for future reference
-        //ViewPager
 
 
-        /*mCustomPagerAdapter = new CustomPagerAdapter(this);
-        mViewPager = (CustomViewPager) findViewById(R.id.viewpager_main);
-        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
-        mViewPager.setAdapter(mCustomPagerAdapter);
-        indicator.setViewPager(mViewPager);
-
-        final Handler h = new Handler(Looper.getMainLooper());
-        final Runnable r = new Runnable() {
-            public void run() {
-                mViewPager.setCurrentItem((mViewPager.getCurrentItem() + 1) % NUM_PAGES, true);
-                h.postDelayed(this, 3000);
-            }
-        };
-        h.postDelayed(r, 3000);*/
-
-
-        //Code for Crescento image (image with curve at the bottom)
-//        mSetCrescentoImage = new SetCrescentoImage(this);
-//        LayoutInflater.from(this).inflate(R.layout.crescento_image, null);
-
-
+        Typeface typeface = Typeface.createFromAsset(getAssets(),"font/goodtimes.ttf");
         //instantiation
         toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
@@ -282,7 +263,8 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
-
+        collapsingToolbarLayout.setExpandedTitleTypeface(typeface);
+        collapsingToolbarLayout.setCollapsedTitleTypeface(typeface);
         if (savedInstanceState == null) {
             fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
