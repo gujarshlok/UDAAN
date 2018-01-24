@@ -39,7 +39,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginStart="8dp"
+                        android:textSize="20dp"
                         android:text="@string/description"
+                        android:fontFamily="@font/goodtimes"
                         android:textColor="@color/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -74,7 +76,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginStart="8dp"
+                        android:textSize="20dp"
                         android:text="@string/venue_time"
+                        android:fontFamily="@font/goodtimes"
                         android:textColor="@color/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -115,6 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
+                        android:fontFamily="@font/goodtimes"
                         android:text="@string/registration"
                         android:textColor="@color/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -124,6 +129,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
+                        android:autoLink="web"
+                        android:linksClickable="true"
                         android:paddingEnd="8dp"
                         android:paddingStart="8dp" />
 
@@ -150,6 +157,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="@string/prizes"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/goodtimes"
                         android:textColor="@color/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -182,7 +191,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:fontFamily="@font/goodtimes"
                         android:layout_marginTop="4dp"
+                        android:textSize="20dp"
                         android:text="@string/organizers"
                         android:textColor="@color/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -311,6 +322,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:text="Reviews"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/goodtimes"
                         android:textColor="@color/colorPrimary"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 

@@ -78,7 +78,7 @@ public class LoginPage extends AppCompatActivity {
         eventOrg = new ArrayList();
         //eventOrg.add("aditya.bhave41@gmail.com");
         eventOrg.add("gujargujar0@gmail.com");
-        eventOrg.add("fifauction2k18@gmail.com");//
+        eventOrg.add("fifaauction2k18@gmail.com");//
         eventOrg.add("humanfoosball.udaan2018@gmail.com");//
         eventOrg.add("aelanejang2018@gmail.com");//
         eventOrg.add("carnival2k18@gmail.com");//
@@ -93,7 +93,8 @@ public class LoginPage extends AppCompatActivity {
         eventOrg.add("quizfandom@gmail.com");//
         eventOrg.add("sptale2018@gmail.com");//
         eventOrg.add("streetdance2k18@gmail.com");//
-        eventOrg.add("hogathon18@gmail.com");//
+        eventOrg.add("hogathon18@gmail.com");
+        eventOrg.add("casino.udaan2k18@gmail.com");//
 
         // and so on
         //prjct exhibition, tech quz
