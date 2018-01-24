@@ -48,8 +48,8 @@ public class CommitteeFragment
         Picasso.with(getContext()).load(R.drawable.udaanvcps).into(vcp);
         Picasso.with(getContext()).load(R.drawable.utech).into(tech);
         Picasso.with(getContext()).load(R.drawable.pa).into(hoes);
-        Picasso.with(getContext()).load(R.drawable.udaanvcps).into(creative);
-        Picasso.with(getContext()).load(R.drawable.madmin).into(admin);
+        Picasso.with(getContext()).load(R.drawable.updated).into(creative);
+        Picasso.with(getContext()).load(R.drawable.updated).into(admin);
         Picasso.with(getContext()).load(R.drawable.usecurity).into(sec);
         Picasso.with(getContext()).load(R.drawable.uhospitality).into(hop);
         Picasso.with(getContext()).load(R.drawable.fa).into(la);
