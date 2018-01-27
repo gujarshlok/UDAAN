@@ -31,7 +31,6 @@ import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -513,7 +512,6 @@ public class EventDetails
                         }
                         String email = (String) snapshot.child("email").getValue();
                         String [] email2= email.split("@");
-                        Log.d("tag",email2[0]);
                         //String email1=email.substring(email.lastIndexOf("@")+1);
                         //Log.d("tag",email1);
                         String rating = (String) snapshot.child("rating").getValue();

@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,7 +152,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.MyVi
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v("Card clicked","hello");
                 Toast.makeText(v.getContext(),"MyEvent Clicked",Toast.LENGTH_SHORT);
             }
         });

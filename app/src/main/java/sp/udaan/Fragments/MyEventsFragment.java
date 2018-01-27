@@ -159,7 +159,6 @@ public class MyEventsFragment extends Fragment {
         final MyEventAdapter evl = new MyEventAdapter(mEvents,getContext());
         //final MyEventAdapter evl=new MyEventAdapter(mEvents,getContext());
         recyclerView.setAdapter(evl);
-        Log.v("Recycler","Hello");
         recyclerView.scrollToPosition(0);
     }
 

@@ -165,8 +165,6 @@ public class ChatFragment extends Fragment {
                     String message=messageView.getText().toString();
                     String email=emailView.getText().toString();
                     String nameto=nametoView.getText().toString();
-                    Log.d("name",name);
-                    Log.d("message",message);
 
                     showpopup(email,name);
                     return false;
