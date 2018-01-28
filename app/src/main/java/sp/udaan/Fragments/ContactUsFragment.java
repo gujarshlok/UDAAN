@@ -66,7 +66,7 @@ public class ContactUsFragment extends Fragment {
         visitWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.spit.ac.in")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.udaanthefest.com")));
             }
         });
 

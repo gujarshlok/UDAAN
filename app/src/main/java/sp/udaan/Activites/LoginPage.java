@@ -159,6 +159,8 @@ public class LoginPage extends AppCompatActivity {
         categories.add("IT");
         categories.add("EXTC");
         categories.add("ETRX");
+        categories.add("MCA");
+        categories.add("ME");
 
 
 
