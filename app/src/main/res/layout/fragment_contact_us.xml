@@ -82,14 +82,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:textStyle="bold"
-                            android:text="Phone"/>
+                            android:text="Nishant Bakhrey-CP"/>
 
                         <android.support.v7.widget.AppCompatTextView
                             android:id="@+id/contact_num_one"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="022 2670 7440"/>
+                            android:text="7588695624"/>
                     </LinearLayout>
 
                     <android.support.v7.widget.AppCompatImageButton
@@ -129,14 +129,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Office"/>
+                            android:text="Arpan Modi-VCP"/>
 
                         <android.support.v7.widget.AppCompatTextView
                             android:id="@+id/contact_num_two"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="022 2670 8520"/>
+                            android:text="9702174917"/>
 
                     </LinearLayout>
 
@@ -178,7 +178,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:textColor="@color/colorAccent"
-                        android:text="principal@spit.ac.in"/>
+                        android:text="udaan@spit.ac.in"/>
                 </LinearLayout>
             </LinearLayout>
 
