@@ -73,7 +73,7 @@ public class SponsorsFragment extends Fragment {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
 
         coRecycler.setHasFixedSize(true);
-        coRecycler.setLayoutManager(new GridLayoutManager(getContext(),2));
+        coRecycler.setLayoutManager(new GridLayoutManager(getContext(),3));
         coRecycler.setItemAnimator(new DefaultItemAnimator());
 
         mRecyclerView.setHasFixedSize(true);

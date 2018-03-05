@@ -52,6 +52,7 @@ import sp.udaan.Fragments.FavoritesFragment;
 import sp.udaan.Fragments.MainFragment;
 import sp.udaan.Fragments.MyEventsFragment;
 import sp.udaan.Fragments.QuizFragment;
+import sp.udaan.Fragments.SponsorsFragment;
 import sp.udaan.HelperClasses.CustomPagerAdapter;
 import sp.udaan.HelperClasses.CustomViewPager;
 import sp.udaan.HelperClasses.SetCrescentoImage;
@@ -379,19 +380,19 @@ public class MainActivity extends AppCompatActivity {
 
                                     break;
 
-//                                case R.id.sponsors_menuItem:
-//                                    new Handler().postDelayed(new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            getSupportFragmentManager().popBackStackImmediate();
-//                                            fragmentTransaction.replace(R.id.fragment_container, new SponsorsFragment());
-//                                            appBarLayout.setExpanded(false, true);
-//                                            fragmentTransaction.addToBackStack(null);
-//                                            fragmentTransaction.commit();
-//                                            collapsingToolbarLayout.setTitle("Sponsors");
-//                                        }
-//                                    }, DRAWER_DELAY);
-//                                    break;
+                                case R.id.sponsors_menuItem:
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            getSupportFragmentManager().popBackStackImmediate();
+                                            fragmentTransaction.replace(R.id.fragment_container, new SponsorsFragment());
+                                            appBarLayout.setExpanded(false, true);
+                                            fragmentTransaction.addToBackStack(null);
+                                            fragmentTransaction.commit();
+                                            collapsingToolbarLayout.setTitle("Sponsors");
+                                        }
+                                    }, DRAWER_DELAY);
+                                    break;
 
 
                                 case R.id.commitee_menuItem:

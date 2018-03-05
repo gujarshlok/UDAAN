@@ -16,29 +16,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Title Sponsor"
+                android:text="Co Sponsor"
                 android:textSize="24sp"
                 android:textColor="@color/colorPrimary"/>
             <ImageView
                 android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:id="@+id/titleImage" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Co-Sponsors"
-                android:textSize="24sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/colorPrimary"/>
-            <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/CoRecycler">
-            </android.support.v7.widget.RecyclerView>
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -66,6 +51,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/mainRecyler">
+            </android.support.v7.widget.RecyclerView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Other Sponsors"
+                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimary"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/CoRecycler">
             </android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>
